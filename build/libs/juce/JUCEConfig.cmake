@@ -49,16 +49,16 @@ include("${CMAKE_CURRENT_LIST_DIR}/LV2_HELPER.cmake")
 if(NOT TARGET juce::juceaide)
     add_executable(juce::juceaide IMPORTED)
     set_target_properties(juce::juceaide PROPERTIES
-        IMPORTED_LOCATION "${PACKAGE_PREFIX_DIR}/bin/JUCE-8.0.1/juceaide")
+        IMPORTED_LOCATION "${PACKAGE_PREFIX_DIR}/bin/JUCE-8.0.2/juceaide")
 endif()
 
 check_required_components("JUCE")
 
-set(JUCE_MODULES_DIR "${PACKAGE_PREFIX_DIR}/include/JUCE-8.0.1/modules" CACHE INTERNAL
+set(JUCE_MODULES_DIR "${PACKAGE_PREFIX_DIR}/include/JUCE-8.0.2/modules" CACHE INTERNAL
     "The path to JUCE modules")
 
-include("${PACKAGE_PREFIX_DIR}/lib/cmake/JUCE-8.0.1/JUCEModuleSupport.cmake")
-include("${PACKAGE_PREFIX_DIR}/lib/cmake/JUCE-8.0.1/JUCEUtils.cmake")
+include("${PACKAGE_PREFIX_DIR}/lib/cmake/JUCE-8.0.2/JUCEModuleSupport.cmake")
+include("${PACKAGE_PREFIX_DIR}/lib/cmake/JUCE-8.0.2/JUCEUtils.cmake")
 
 set(_juce_modules
     juce_analytics
@@ -110,7 +110,7 @@ unset(_targets_defined)
 unset(_targets_expected)
 
 foreach(_juce_module IN LISTS _juce_modules)
-    juce_add_module("${PACKAGE_PREFIX_DIR}/include/JUCE-8.0.1/modules/${_juce_module}" ALIAS_NAMESPACE juce)
+    juce_add_module("${PACKAGE_PREFIX_DIR}/include/JUCE-8.0.2/modules/${_juce_module}" ALIAS_NAMESPACE juce)
 endforeach()
 
 unset(_juce_modules)

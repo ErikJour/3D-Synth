@@ -1,4 +1,4 @@
-# Install script for directory: /Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth
+# Install script for directory: /Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,17 +34,17 @@ endif()
 
 # Set path to fallback-tool for dependency-resolution.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/objdump")
+  set(CMAKE_OBJDUMP "/Library/Developer/CommandLineTools/usr/bin/objdump")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/cmake_install.cmake")
+  include("/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/plugin/cmake_install.cmake")
+  include("/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/plugin/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -62,6 +62,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-  file(WRITE "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

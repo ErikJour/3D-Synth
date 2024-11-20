@@ -52,7 +52,7 @@ add_executable(juce_tools::juceaide IMPORTED)
 # Import target "juce_tools::juceaide" for configuration "Debug"
 set_property(TARGET juce_tools::juceaide APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
 set_target_properties(juce_tools::juceaide PROPERTIES
-  IMPORTED_LOCATION_DEBUG "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools/extras/Build/juceaide/juceaide_artefacts/Debug/juceaide"
+  IMPORTED_LOCATION_DEBUG "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools/extras/Build/juceaide/juceaide_artefacts/Debug/juceaide"
   )
 
 # This file does not depend on other imported targets which have

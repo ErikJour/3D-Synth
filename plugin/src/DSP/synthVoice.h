@@ -10,8 +10,8 @@
 #pragma once
 #include <juce_audio_processors/juce_audio_processors.h>
 #include "synthSound.h"
-#include "noiseGenerator.h"
 #include "waveGenerator.h"
+#include "lfo.h"
 
 class SynthVoice : public juce::SynthesiserVoice
 
@@ -20,7 +20,12 @@ public:
     
     //==============================================================================
     
-    SynthVoice() : waveGenerator(), noise(), amplitude(0.25), frequency(440.0), isActive(false), sampleRate(44100.0) {}
+    SynthVoice() : mWaveGenerator(), mAmplitude(0.25), mFrequency(440.0), isActive(false), sampleRate(44100.0), adsr() {
+
+    adsr.setParameters(adsrParams);
+    
+
+    }
     
     ~SynthVoice() override = default;
     
@@ -32,81 +37,160 @@ public:
     
     }
     //==========================================================================
-    
+
+
+    void setADSRSampleRate (double sampleRate)
+    {
+        adsr.setSampleRate(sampleRate);
+    }
+
+     void setTremoloSampleRate (double sampleRate)
+    {
+        mTremolo.setSampleRate(sampleRate);
+    }
+
+
+    void setADSRParams (float attack, float sustain, float release)
+    {
+        adsrParams.attack = 0.9;
+        adsrParams.decay = 0.3;
+        adsrParams.sustain = 0;
+        adsrParams.release = 0.3;
+        
+    }
+
     void startNote(int midiNoteNumber, float velocity, juce::SynthesiserSound* sound, int currentPitchWheelPosition) override
     {
-        frequency = juce::MidiMessage::getMidiNoteInHertz(midiNoteNumber);
-        amplitude = velocity;
-        waveGenerator.setFrequency(frequency, sampleRate);
-        noise.updateNoiseLevel(0.0f);
+
+         adsr.setParameters(adsrParams);
+
+        if (adsr.isActive())
+        {
+                adsr.noteOff();
+        }
+        
+        setModulationParams();
+        
+       
+        mFrequency = juce::MidiMessage::getMidiNoteInHertz(midiNoteNumber);
+
+        mAmplitude = velocity;
+        mWaveGenerator.setFrequency(mFrequency, sampleRate);
+        mWaveGenerator.resetPhase();
+
         isActive = true;
-        std:: cout << "midi note: "<< midiNoteNumber << " freq: " << frequency << std::endl;
+        adsr.noteOn();
     }
-    //==========================================================================
     
     void stopNote (float velocity, bool allowTailoff) override
+{
+    adsr.noteOff();
+
+    if (!allowTailoff)
     {
         clearCurrentNote();
         isActive = false;
-        
     }
+}
     //==========================================================================
     void pitchWheelMoved (int newPitchWheelValue) override
-    {
-       
+    { 
     }
-    //==========================================================================
     
     void controllerMoved (int controllerNumber, int newControllerValue) override
-    {
-        
+    { 
     }
     //==========================================================================
+
+    void setModulationParams()
+    {
+            mTremolo.setSampleRate(sampleRate);
+            mTremolo.setRate(0.3f);
+            mTremolo.setDepth(1.0f);
+    }
     
     void renderNextBlock (juce::AudioBuffer<float> &outputBuffer, int startSample, int numSamples) override
     {
+
+        adsr.setParameters(adsrParams);
+
         if (!isActive)
             return;
         
         float* channelDataLeft = outputBuffer.getWritePointer(0, startSample);
         float* channelDataRight = outputBuffer.getWritePointer(1, startSample);
+
+          
         
         for (int sample = 0; sample < numSamples; ++sample)
         {
+            float quietDown = 0.05f;
+
+            float tremoloSample = mTremolo.getNextSample();
+
+            float waveSample = mWaveGenerator.getNextSample() * mAmplitude * quietDown;
+
+            float modulatedSample = waveSample * tremoloSample;
+
+            if (tremoloOn)
+            {
+                modulatedSample *= adsr.getNextSample();
+                channelDataLeft[sample] = modulatedSample;
+                channelDataRight[sample] = modulatedSample;
+            }
+
+            else 
+
+            { 
+                waveSample *= adsr.getNextSample();
+                channelDataLeft[sample] = waveSample;
+                channelDataRight[sample] = waveSample;
+
+            }
+
             
-            float waveSample = waveGenerator.getNextSample() * amplitude;
-            
-            float noiseSample = noise.getNextSample() * .3;
-            
-            
-            channelDataLeft[sample] = waveSample + noiseSample;
-            channelDataRight[sample] = waveSample + noiseSample;
+            if (!adsr.isActive())
+            {
+                clearCurrentNote();
+                isActive = false;
+                break;
+            }
             
         }
+
     }
     
     void updateWaveType (int newWaveType)
     {
-        waveGenerator.setWaveType(static_cast<WaveGenerator::WaveType>(newWaveType));
+        mWaveGenerator.setWaveType(static_cast<WaveGenerator::WaveType>(newWaveType));
     }
-    
-    
-    void updateNoiseLevel (float newNoiseLevel)
+
+    void setTremolo (bool isOn)
     {
-        noise.updateNoiseLevel(newNoiseLevel);
+        tremoloOn = isOn;
+       
     }
+    
     
     //==========================================================================
     
     
 private:
-//    SineWaveGenerator sineWaveGenerator;
-    WaveGenerator waveGenerator;
-    NoiseGenerator noise;
+    WaveGenerator mWaveGenerator;
     
-    double amplitude;
-    double frequency;
+    double mAmplitude;
+    double mFrequency;
     bool isActive;
-    double phase;
     double sampleRate;
+
+    juce::ADSR adsr;
+    juce::ADSR::Parameters adsrParams;
+
+    LFO mTremolo;
+
+    bool tremoloOn = false;
+
+
+
+    
 };

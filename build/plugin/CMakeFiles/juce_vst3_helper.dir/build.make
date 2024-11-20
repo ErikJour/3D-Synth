@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/homebrew/Cellar/cmake/3.30.0/bin/cmake
+CMAKE_COMMAND = /usr/local/Cellar/cmake/3.30.5/bin/cmake
 
 # The command to remove a file.
-RM = /opt/homebrew/Cellar/cmake/3.30.0/bin/cmake -E rm -f
+RM = /usr/local/Cellar/cmake/3.30.5/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth"
+CMAKE_SOURCE_DIR = "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build"
+CMAKE_BINARY_DIR = "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build"
 
 # Include any dependencies generated for this target.
 include plugin/CMakeFiles/juce_vst3_helper.dir/depend.make
@@ -70,18 +70,18 @@ include plugin/CMakeFiles/juce_vst3_helper.dir/progress.make
 include plugin/CMakeFiles/juce_vst3_helper.dir/flags.make
 
 plugin/CMakeFiles/juce_vst3_helper.dir/__/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.o: plugin/CMakeFiles/juce_vst3_helper.dir/flags.make
-plugin/CMakeFiles/juce_vst3_helper.dir/__/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.o: /Users/ejourgensen/Desktop/Erik/Programming/Audio\ Dev/Three_D_Synth/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm
+plugin/CMakeFiles/juce_vst3_helper.dir/__/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.o: /Users/erikjourgensen/Desktop/Dev/Weekly\ Projects/Week\ 6\ -\ The\ 3D\ Synth\ Part\ 1/ThreeDPartOne/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm
 plugin/CMakeFiles/juce_vst3_helper.dir/__/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.o: plugin/CMakeFiles/juce_vst3_helper.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object plugin/CMakeFiles/juce_vst3_helper.dir/__/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.o"
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/plugin" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT plugin/CMakeFiles/juce_vst3_helper.dir/__/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.o -MF CMakeFiles/juce_vst3_helper.dir/__/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.o.d -o CMakeFiles/juce_vst3_helper.dir/__/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.o -c "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object plugin/CMakeFiles/juce_vst3_helper.dir/__/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.o"
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/plugin" && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT plugin/CMakeFiles/juce_vst3_helper.dir/__/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.o -MF CMakeFiles/juce_vst3_helper.dir/__/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.o.d -o CMakeFiles/juce_vst3_helper.dir/__/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.o -c "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm"
 
 plugin/CMakeFiles/juce_vst3_helper.dir/__/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/juce_vst3_helper.dir/__/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.i"
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/plugin" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm" > CMakeFiles/juce_vst3_helper.dir/__/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/plugin" && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm" > CMakeFiles/juce_vst3_helper.dir/__/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.i
 
 plugin/CMakeFiles/juce_vst3_helper.dir/__/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/juce_vst3_helper.dir/__/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.s"
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/plugin" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm" -o CMakeFiles/juce_vst3_helper.dir/__/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/plugin" && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm" -o CMakeFiles/juce_vst3_helper.dir/__/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.s
 
 # Object files for target juce_vst3_helper
 juce_vst3_helper_OBJECTS = \
@@ -93,18 +93,18 @@ juce_vst3_helper_EXTERNAL_OBJECTS =
 plugin/juce_vst3_helper: plugin/CMakeFiles/juce_vst3_helper.dir/__/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.o
 plugin/juce_vst3_helper: plugin/CMakeFiles/juce_vst3_helper.dir/build.make
 plugin/juce_vst3_helper: plugin/CMakeFiles/juce_vst3_helper.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable juce_vst3_helper"
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/plugin" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/juce_vst3_helper.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable juce_vst3_helper"
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/plugin" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/juce_vst3_helper.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 plugin/CMakeFiles/juce_vst3_helper.dir/build: plugin/juce_vst3_helper
 .PHONY : plugin/CMakeFiles/juce_vst3_helper.dir/build
 
 plugin/CMakeFiles/juce_vst3_helper.dir/clean:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/plugin" && $(CMAKE_COMMAND) -P CMakeFiles/juce_vst3_helper.dir/cmake_clean.cmake
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/plugin" && $(CMAKE_COMMAND) -P CMakeFiles/juce_vst3_helper.dir/cmake_clean.cmake
 .PHONY : plugin/CMakeFiles/juce_vst3_helper.dir/clean
 
 plugin/CMakeFiles/juce_vst3_helper.dir/depend:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth" "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/plugin" "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/plugin" "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/plugin/CMakeFiles/juce_vst3_helper.dir/DependInfo.cmake" "--color=$(COLOR)"
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne" "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/plugin" "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/plugin" "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/plugin/CMakeFiles/juce_vst3_helper.dir/DependInfo.cmake" "--color=$(COLOR)"
 .PHONY : plugin/CMakeFiles/juce_vst3_helper.dir/depend
 

@@ -1,26 +1,29 @@
-juce_add_plugin(ThreeDSynth
+juce_add_plugin(ThreeDOne
     COMPANY_NAME ErikJourgensen
     IS_SYNTH TRUE
     NEEDS_MIDI_INPUT TRUE
     NEEDS_MIDI_OUTPUT FALSE
     PLUGIN_MANUFACTURER_CODE JOUR
-    PLUGIN_CODE TDSN 
+    PLUGIN_CODE TRDO 
     FORMATS AU VST3 Standalone
 )
 
-        target_sources(ThreeDSynth
+        target_sources(ThreeDOne
             PRIVATE 
             src/PluginEditor.cpp 
             src/PluginProcessor.cpp 
-            src/DSP/noiseGenerator.h
             src/DSP/synthSound.h
             src/DSP/synthVoice.h 
             src/DSP/waveGenerator.h
+            src/DSP/velocityListener.h
+            src/DSP/FrequencyListener.h
+            src/DSP/lfo.h
+            src/DSP/lfo.cpp
         )
 
-        target_include_directories(ThreeDSynth PRIVATE include src)
+        target_include_directories(ThreeDOne PRIVATE include src)
 
-        target_link_libraries(ThreeDSynth
+        target_link_libraries(ThreeDOne
         PRIVATE 
         juce::juce_audio_utils
         juce::juce_gui_extra
@@ -30,7 +33,7 @@ juce_add_plugin(ThreeDSynth
         juce::juce_recommended_warning_flags
         )
 
-        target_compile_definitions(ThreeDSynth 
+        target_compile_definitions(ThreeDOne
         PUBLIC 
         JUCE_WEB_BROWSER=1
         JUCE_USE_CURL=0

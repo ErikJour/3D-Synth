@@ -48,19 +48,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/homebrew/Cellar/cmake/3.30.0/bin/cmake
+CMAKE_COMMAND = /usr/local/Cellar/cmake/3.30.5/bin/cmake
 
 # The command to remove a file.
-RM = /opt/homebrew/Cellar/cmake/3.30.0/bin/cmake -E rm -f
+RM = /usr/local/Cellar/cmake/3.30.5/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth"
+CMAKE_SOURCE_DIR = "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build"
+CMAKE_BINARY_DIR = "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
-	/opt/homebrew/Cellar/cmake/3.30.0/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/local/Cellar/cmake/3.30.5/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -78,7 +78,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake to regenerate build system..."
-	/opt/homebrew/Cellar/cmake/3.30.0/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/local/Cellar/cmake/3.30.5/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -97,49 +97,49 @@ list_install_components/fast: list_install_components
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/opt/homebrew/Cellar/cmake/3.30.0/bin/cmake -P cmake_install.cmake
+	/usr/local/Cellar/cmake/3.30.5/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/opt/homebrew/Cellar/cmake/3.30.0/bin/cmake -P cmake_install.cmake
+	/usr/local/Cellar/cmake/3.30.5/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/opt/homebrew/Cellar/cmake/3.30.0/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/usr/local/Cellar/cmake/3.30.5/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/opt/homebrew/Cellar/cmake/3.30.0/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/usr/local/Cellar/cmake/3.30.5/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/opt/homebrew/Cellar/cmake/3.30.0/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/usr/local/Cellar/cmake/3.30.5/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/opt/homebrew/Cellar/cmake/3.30.0/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/usr/local/Cellar/cmake/3.30.5/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(CMAKE_COMMAND) -E cmake_progress_start "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/CMakeFiles" "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/plugin//CMakeFiles/progress.marks"
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plugin/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/CMakeFiles" 0
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(CMAKE_COMMAND) -E cmake_progress_start "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/CMakeFiles" "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/plugin//CMakeFiles/progress.marks"
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plugin/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plugin/clean
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plugin/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,93 +148,93 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plugin/preinstall
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plugin/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plugin/preinstall
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plugin/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(CMAKE_COMMAND) -P "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/CMakeFiles/VerifyGlobs.cmake"
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(CMAKE_COMMAND) -P "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/CMakeFiles/VerifyGlobs.cmake"
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-plugin/CMakeFiles/ThreeDSynth.dir/rule:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plugin/CMakeFiles/ThreeDSynth.dir/rule
-.PHONY : plugin/CMakeFiles/ThreeDSynth.dir/rule
+plugin/CMakeFiles/ThreeDOne.dir/rule:
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plugin/CMakeFiles/ThreeDOne.dir/rule
+.PHONY : plugin/CMakeFiles/ThreeDOne.dir/rule
 
 # Convenience name for target.
-ThreeDSynth: plugin/CMakeFiles/ThreeDSynth.dir/rule
-.PHONY : ThreeDSynth
+ThreeDOne: plugin/CMakeFiles/ThreeDOne.dir/rule
+.PHONY : ThreeDOne
 
 # fast build rule for target.
-ThreeDSynth/fast:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/build
-.PHONY : ThreeDSynth/fast
+ThreeDOne/fast:
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/build
+.PHONY : ThreeDOne/fast
 
 # Convenience name for target.
-plugin/CMakeFiles/ThreeDSynth_All.dir/rule:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plugin/CMakeFiles/ThreeDSynth_All.dir/rule
-.PHONY : plugin/CMakeFiles/ThreeDSynth_All.dir/rule
+plugin/CMakeFiles/ThreeDOne_All.dir/rule:
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plugin/CMakeFiles/ThreeDOne_All.dir/rule
+.PHONY : plugin/CMakeFiles/ThreeDOne_All.dir/rule
 
 # Convenience name for target.
-ThreeDSynth_All: plugin/CMakeFiles/ThreeDSynth_All.dir/rule
-.PHONY : ThreeDSynth_All
+ThreeDOne_All: plugin/CMakeFiles/ThreeDOne_All.dir/rule
+.PHONY : ThreeDOne_All
 
 # fast build rule for target.
-ThreeDSynth_All/fast:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_All.dir/build.make plugin/CMakeFiles/ThreeDSynth_All.dir/build
-.PHONY : ThreeDSynth_All/fast
+ThreeDOne_All/fast:
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_All.dir/build.make plugin/CMakeFiles/ThreeDOne_All.dir/build
+.PHONY : ThreeDOne_All/fast
 
 # Convenience name for target.
-plugin/CMakeFiles/ThreeDSynth_Standalone.dir/rule:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plugin/CMakeFiles/ThreeDSynth_Standalone.dir/rule
-.PHONY : plugin/CMakeFiles/ThreeDSynth_Standalone.dir/rule
+plugin/CMakeFiles/ThreeDOne_Standalone.dir/rule:
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plugin/CMakeFiles/ThreeDOne_Standalone.dir/rule
+.PHONY : plugin/CMakeFiles/ThreeDOne_Standalone.dir/rule
 
 # Convenience name for target.
-ThreeDSynth_Standalone: plugin/CMakeFiles/ThreeDSynth_Standalone.dir/rule
-.PHONY : ThreeDSynth_Standalone
+ThreeDOne_Standalone: plugin/CMakeFiles/ThreeDOne_Standalone.dir/rule
+.PHONY : ThreeDOne_Standalone
 
 # fast build rule for target.
-ThreeDSynth_Standalone/fast:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build
-.PHONY : ThreeDSynth_Standalone/fast
+ThreeDOne_Standalone/fast:
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/build
+.PHONY : ThreeDOne_Standalone/fast
 
 # Convenience name for target.
-plugin/CMakeFiles/ThreeDSynth_AU.dir/rule:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plugin/CMakeFiles/ThreeDSynth_AU.dir/rule
-.PHONY : plugin/CMakeFiles/ThreeDSynth_AU.dir/rule
+plugin/CMakeFiles/ThreeDOne_AU.dir/rule:
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plugin/CMakeFiles/ThreeDOne_AU.dir/rule
+.PHONY : plugin/CMakeFiles/ThreeDOne_AU.dir/rule
 
 # Convenience name for target.
-ThreeDSynth_AU: plugin/CMakeFiles/ThreeDSynth_AU.dir/rule
-.PHONY : ThreeDSynth_AU
+ThreeDOne_AU: plugin/CMakeFiles/ThreeDOne_AU.dir/rule
+.PHONY : ThreeDOne_AU
 
 # fast build rule for target.
-ThreeDSynth_AU/fast:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/build
-.PHONY : ThreeDSynth_AU/fast
+ThreeDOne_AU/fast:
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/build
+.PHONY : ThreeDOne_AU/fast
 
 # Convenience name for target.
-plugin/CMakeFiles/ThreeDSynth_VST3.dir/rule:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plugin/CMakeFiles/ThreeDSynth_VST3.dir/rule
-.PHONY : plugin/CMakeFiles/ThreeDSynth_VST3.dir/rule
+plugin/CMakeFiles/ThreeDOne_VST3.dir/rule:
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plugin/CMakeFiles/ThreeDOne_VST3.dir/rule
+.PHONY : plugin/CMakeFiles/ThreeDOne_VST3.dir/rule
 
 # Convenience name for target.
-ThreeDSynth_VST3: plugin/CMakeFiles/ThreeDSynth_VST3.dir/rule
-.PHONY : ThreeDSynth_VST3
+ThreeDOne_VST3: plugin/CMakeFiles/ThreeDOne_VST3.dir/rule
+.PHONY : ThreeDOne_VST3
 
 # fast build rule for target.
-ThreeDSynth_VST3/fast:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/build
-.PHONY : ThreeDSynth_VST3/fast
+ThreeDOne_VST3/fast:
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/build
+.PHONY : ThreeDOne_VST3/fast
 
 # Convenience name for target.
 plugin/CMakeFiles/juce_vst3_helper.dir/rule:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plugin/CMakeFiles/juce_vst3_helper.dir/rule
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plugin/CMakeFiles/juce_vst3_helper.dir/rule
 .PHONY : plugin/CMakeFiles/juce_vst3_helper.dir/rule
 
 # Convenience name for target.
@@ -243,7 +243,7 @@ juce_vst3_helper: plugin/CMakeFiles/juce_vst3_helper.dir/rule
 
 # fast build rule for target.
 juce_vst3_helper/fast:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/juce_vst3_helper.dir/build.make plugin/CMakeFiles/juce_vst3_helper.dir/build
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/juce_vst3_helper.dir/build.make plugin/CMakeFiles/juce_vst3_helper.dir/build
 .PHONY : juce_vst3_helper/fast
 
 __/libs/juce/modules/juce_audio_basics/juce_audio_basics.o: __/libs/juce/modules/juce_audio_basics/juce_audio_basics.mm.o
@@ -251,7 +251,7 @@ __/libs/juce/modules/juce_audio_basics/juce_audio_basics.o: __/libs/juce/modules
 
 # target to build an object file
 __/libs/juce/modules/juce_audio_basics/juce_audio_basics.mm.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_audio_basics/juce_audio_basics.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_audio_basics/juce_audio_basics.mm.o
 .PHONY : __/libs/juce/modules/juce_audio_basics/juce_audio_basics.mm.o
 
 __/libs/juce/modules/juce_audio_basics/juce_audio_basics.i: __/libs/juce/modules/juce_audio_basics/juce_audio_basics.mm.i
@@ -259,7 +259,7 @@ __/libs/juce/modules/juce_audio_basics/juce_audio_basics.i: __/libs/juce/modules
 
 # target to preprocess a source file
 __/libs/juce/modules/juce_audio_basics/juce_audio_basics.mm.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_audio_basics/juce_audio_basics.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_audio_basics/juce_audio_basics.mm.i
 .PHONY : __/libs/juce/modules/juce_audio_basics/juce_audio_basics.mm.i
 
 __/libs/juce/modules/juce_audio_basics/juce_audio_basics.s: __/libs/juce/modules/juce_audio_basics/juce_audio_basics.mm.s
@@ -267,7 +267,7 @@ __/libs/juce/modules/juce_audio_basics/juce_audio_basics.s: __/libs/juce/modules
 
 # target to generate assembly for a file
 __/libs/juce/modules/juce_audio_basics/juce_audio_basics.mm.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_audio_basics/juce_audio_basics.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_audio_basics/juce_audio_basics.mm.s
 .PHONY : __/libs/juce/modules/juce_audio_basics/juce_audio_basics.mm.s
 
 __/libs/juce/modules/juce_audio_devices/juce_audio_devices.o: __/libs/juce/modules/juce_audio_devices/juce_audio_devices.mm.o
@@ -275,7 +275,7 @@ __/libs/juce/modules/juce_audio_devices/juce_audio_devices.o: __/libs/juce/modul
 
 # target to build an object file
 __/libs/juce/modules/juce_audio_devices/juce_audio_devices.mm.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_audio_devices/juce_audio_devices.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_audio_devices/juce_audio_devices.mm.o
 .PHONY : __/libs/juce/modules/juce_audio_devices/juce_audio_devices.mm.o
 
 __/libs/juce/modules/juce_audio_devices/juce_audio_devices.i: __/libs/juce/modules/juce_audio_devices/juce_audio_devices.mm.i
@@ -283,7 +283,7 @@ __/libs/juce/modules/juce_audio_devices/juce_audio_devices.i: __/libs/juce/modul
 
 # target to preprocess a source file
 __/libs/juce/modules/juce_audio_devices/juce_audio_devices.mm.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_audio_devices/juce_audio_devices.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_audio_devices/juce_audio_devices.mm.i
 .PHONY : __/libs/juce/modules/juce_audio_devices/juce_audio_devices.mm.i
 
 __/libs/juce/modules/juce_audio_devices/juce_audio_devices.s: __/libs/juce/modules/juce_audio_devices/juce_audio_devices.mm.s
@@ -291,7 +291,7 @@ __/libs/juce/modules/juce_audio_devices/juce_audio_devices.s: __/libs/juce/modul
 
 # target to generate assembly for a file
 __/libs/juce/modules/juce_audio_devices/juce_audio_devices.mm.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_audio_devices/juce_audio_devices.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_audio_devices/juce_audio_devices.mm.s
 .PHONY : __/libs/juce/modules/juce_audio_devices/juce_audio_devices.mm.s
 
 __/libs/juce/modules/juce_audio_formats/juce_audio_formats.o: __/libs/juce/modules/juce_audio_formats/juce_audio_formats.mm.o
@@ -299,7 +299,7 @@ __/libs/juce/modules/juce_audio_formats/juce_audio_formats.o: __/libs/juce/modul
 
 # target to build an object file
 __/libs/juce/modules/juce_audio_formats/juce_audio_formats.mm.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_audio_formats/juce_audio_formats.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_audio_formats/juce_audio_formats.mm.o
 .PHONY : __/libs/juce/modules/juce_audio_formats/juce_audio_formats.mm.o
 
 __/libs/juce/modules/juce_audio_formats/juce_audio_formats.i: __/libs/juce/modules/juce_audio_formats/juce_audio_formats.mm.i
@@ -307,7 +307,7 @@ __/libs/juce/modules/juce_audio_formats/juce_audio_formats.i: __/libs/juce/modul
 
 # target to preprocess a source file
 __/libs/juce/modules/juce_audio_formats/juce_audio_formats.mm.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_audio_formats/juce_audio_formats.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_audio_formats/juce_audio_formats.mm.i
 .PHONY : __/libs/juce/modules/juce_audio_formats/juce_audio_formats.mm.i
 
 __/libs/juce/modules/juce_audio_formats/juce_audio_formats.s: __/libs/juce/modules/juce_audio_formats/juce_audio_formats.mm.s
@@ -315,7 +315,7 @@ __/libs/juce/modules/juce_audio_formats/juce_audio_formats.s: __/libs/juce/modul
 
 # target to generate assembly for a file
 __/libs/juce/modules/juce_audio_formats/juce_audio_formats.mm.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_audio_formats/juce_audio_formats.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_audio_formats/juce_audio_formats.mm.s
 .PHONY : __/libs/juce/modules/juce_audio_formats/juce_audio_formats.mm.s
 
 __/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.o: __/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.o
@@ -323,7 +323,7 @@ __/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.o: __
 
 # target to build an object file
 __/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/juce_vst3_helper.dir/build.make plugin/CMakeFiles/juce_vst3_helper.dir/__/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/juce_vst3_helper.dir/build.make plugin/CMakeFiles/juce_vst3_helper.dir/__/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.o
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.o
 
 __/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.i: __/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.i
@@ -331,7 +331,7 @@ __/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.i: __
 
 # target to preprocess a source file
 __/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/juce_vst3_helper.dir/build.make plugin/CMakeFiles/juce_vst3_helper.dir/__/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/juce_vst3_helper.dir/build.make plugin/CMakeFiles/juce_vst3_helper.dir/__/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.i
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.i
 
 __/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.s: __/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.s
@@ -339,7 +339,7 @@ __/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.s: __
 
 # target to generate assembly for a file
 __/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/juce_vst3_helper.dir/build.make plugin/CMakeFiles/juce_vst3_helper.dir/__/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/juce_vst3_helper.dir/build.make plugin/CMakeFiles/juce_vst3_helper.dir/__/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.s
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.mm.s
 
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.o: __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.mm.o
@@ -347,9 +347,9 @@ __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.o: __
 
 # target to build an object file
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.mm.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.mm.o
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.mm.o
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.mm.o
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.mm.o
 
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.i: __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.mm.i
@@ -357,9 +357,9 @@ __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.i: __
 
 # target to preprocess a source file
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.mm.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.mm.i
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.mm.i
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.mm.i
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.mm.i
 
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.s: __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.mm.s
@@ -367,9 +367,9 @@ __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.s: __
 
 # target to generate assembly for a file
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.mm.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.mm.s
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.mm.s
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.mm.s
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.mm.s
 
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils.o: __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils.cpp.o
@@ -377,9 +377,9 @@ __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils
 
 # target to build an object file
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils.cpp.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils.cpp.o
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils.cpp.o
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils.cpp.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils.cpp.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils.cpp.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils.cpp.o
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils.cpp.o
 
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils.i: __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils.cpp.i
@@ -387,9 +387,9 @@ __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils
 
 # target to preprocess a source file
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils.cpp.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils.cpp.i
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils.cpp.i
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils.cpp.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils.cpp.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils.cpp.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils.cpp.i
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils.cpp.i
 
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils.s: __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils.cpp.s
@@ -397,9 +397,9 @@ __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils
 
 # target to generate assembly for a file
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils.cpp.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils.cpp.s
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils.cpp.s
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils.cpp.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils.cpp.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils.cpp.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils.cpp.s
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils.cpp.s
 
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.o: __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.cpp.o
@@ -407,9 +407,9 @@ __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.o: __
 
 # target to build an object file
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.cpp.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.cpp.o
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.cpp.o
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.cpp.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.cpp.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.cpp.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.cpp.o
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.cpp.o
 
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.i: __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.cpp.i
@@ -417,9 +417,9 @@ __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.i: __
 
 # target to preprocess a source file
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.cpp.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.cpp.i
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.cpp.i
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.cpp.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.cpp.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.cpp.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.cpp.i
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.cpp.i
 
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.s: __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.cpp.s
@@ -427,9 +427,9 @@ __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.s: __
 
 # target to generate assembly for a file
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.cpp.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.cpp.s
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.cpp.s
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.cpp.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.cpp.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.cpp.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.cpp.s
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.cpp.s
 
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_1.o: __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_1.mm.o
@@ -437,9 +437,9 @@ __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_1.o: _
 
 # target to build an object file
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_1.mm.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_1.mm.o
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_1.mm.o
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_1.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_1.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_1.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_1.mm.o
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_1.mm.o
 
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_1.i: __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_1.mm.i
@@ -447,9 +447,9 @@ __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_1.i: _
 
 # target to preprocess a source file
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_1.mm.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_1.mm.i
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_1.mm.i
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_1.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_1.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_1.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_1.mm.i
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_1.mm.i
 
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_1.s: __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_1.mm.s
@@ -457,9 +457,9 @@ __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_1.s: _
 
 # target to generate assembly for a file
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_1.mm.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_1.mm.s
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_1.mm.s
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_1.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_1.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_1.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_1.mm.s
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_1.mm.s
 
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_2.o: __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_2.mm.o
@@ -467,9 +467,9 @@ __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_2.o: _
 
 # target to build an object file
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_2.mm.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_2.mm.o
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_2.mm.o
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_2.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_2.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_2.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_2.mm.o
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_2.mm.o
 
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_2.i: __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_2.mm.i
@@ -477,9 +477,9 @@ __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_2.i: _
 
 # target to preprocess a source file
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_2.mm.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_2.mm.i
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_2.mm.i
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_2.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_2.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_2.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_2.mm.i
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_2.mm.i
 
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_2.s: __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_2.mm.s
@@ -487,9 +487,9 @@ __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_2.s: _
 
 # target to generate assembly for a file
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_2.mm.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_2.mm.s
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_2.mm.s
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_2.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_2.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_2.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_2.mm.s
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU_2.mm.s
 
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AUv3.o: __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AUv3.mm.o
@@ -497,9 +497,9 @@ __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AUv3.o: _
 
 # target to build an object file
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AUv3.mm.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AUv3.mm.o
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AUv3.mm.o
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AUv3.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AUv3.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AUv3.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AUv3.mm.o
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AUv3.mm.o
 
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AUv3.i: __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AUv3.mm.i
@@ -507,9 +507,9 @@ __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AUv3.i: _
 
 # target to preprocess a source file
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AUv3.mm.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AUv3.mm.i
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AUv3.mm.i
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AUv3.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AUv3.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AUv3.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AUv3.mm.i
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AUv3.mm.i
 
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AUv3.s: __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AUv3.mm.s
@@ -517,9 +517,9 @@ __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AUv3.s: _
 
 # target to generate assembly for a file
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AUv3.mm.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AUv3.mm.s
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AUv3.mm.s
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AUv3.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AUv3.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AUv3.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AUv3.mm.s
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AUv3.mm.s
 
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.o: __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.mm.o
@@ -527,9 +527,9 @@ __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.o: __
 
 # target to build an object file
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.mm.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.mm.o
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.mm.o
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.mm.o
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.mm.o
 
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.i: __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.mm.i
@@ -537,9 +537,9 @@ __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.i: __
 
 # target to preprocess a source file
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.mm.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.mm.i
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.mm.i
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.mm.i
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.mm.i
 
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.s: __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.mm.s
@@ -547,9 +547,9 @@ __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.s: __
 
 # target to generate assembly for a file
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.mm.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.mm.s
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.mm.s
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.mm.s
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.mm.s
 
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.o: __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp.o
@@ -557,9 +557,9 @@ __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalon
 
 # target to build an object file
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp.o
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp.o
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp.o
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp.o
 
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.i: __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp.i
@@ -567,9 +567,9 @@ __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalon
 
 # target to preprocess a source file
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp.i
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp.i
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp.i
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp.i
 
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.s: __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp.s
@@ -577,9 +577,9 @@ __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalon
 
 # target to generate assembly for a file
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp.s
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp.s
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp.s
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp.s
 
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.o: __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.cpp.o
@@ -587,9 +587,9 @@ __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.o: 
 
 # target to build an object file
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.cpp.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.cpp.o
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.cpp.o
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.cpp.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.cpp.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.cpp.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.cpp.o
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.cpp.o
 
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.i: __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.cpp.i
@@ -597,9 +597,9 @@ __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.i: 
 
 # target to preprocess a source file
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.cpp.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.cpp.i
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.cpp.i
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.cpp.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.cpp.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.cpp.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.cpp.i
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.cpp.i
 
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.s: __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.cpp.s
@@ -607,9 +607,9 @@ __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.s: 
 
 # target to generate assembly for a file
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.cpp.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.cpp.s
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.cpp.s
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.cpp.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.cpp.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.cpp.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.cpp.s
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.cpp.s
 
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.o: __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.mm.o
@@ -617,9 +617,9 @@ __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.o: _
 
 # target to build an object file
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.mm.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.mm.o
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.mm.o
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.mm.o
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.mm.o
 
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.i: __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.mm.i
@@ -627,9 +627,9 @@ __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.i: _
 
 # target to preprocess a source file
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.mm.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.mm.i
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.mm.i
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.mm.i
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.mm.i
 
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.s: __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.mm.s
@@ -637,9 +637,9 @@ __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.s: _
 
 # target to generate assembly for a file
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.mm.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.mm.s
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.mm.s
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.mm.s
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.mm.s
 
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.o: __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.mm.o
@@ -647,9 +647,9 @@ __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.o: _
 
 # target to build an object file
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.mm.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.mm.o
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.mm.o
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.mm.o
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.mm.o
 
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.i: __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.mm.i
@@ -657,9 +657,9 @@ __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.i: _
 
 # target to preprocess a source file
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.mm.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.mm.i
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.mm.i
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.mm.i
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.mm.i
 
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.s: __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.mm.s
@@ -667,9 +667,9 @@ __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.s: _
 
 # target to generate assembly for a file
 __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.mm.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.mm.s
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.mm.s
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/__/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.mm.s
 .PHONY : __/libs/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.mm.s
 
 __/libs/juce/modules/juce_audio_processors/juce_audio_processors.o: __/libs/juce/modules/juce_audio_processors/juce_audio_processors.mm.o
@@ -677,7 +677,7 @@ __/libs/juce/modules/juce_audio_processors/juce_audio_processors.o: __/libs/juce
 
 # target to build an object file
 __/libs/juce/modules/juce_audio_processors/juce_audio_processors.mm.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_audio_processors/juce_audio_processors.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_audio_processors/juce_audio_processors.mm.o
 .PHONY : __/libs/juce/modules/juce_audio_processors/juce_audio_processors.mm.o
 
 __/libs/juce/modules/juce_audio_processors/juce_audio_processors.i: __/libs/juce/modules/juce_audio_processors/juce_audio_processors.mm.i
@@ -685,7 +685,7 @@ __/libs/juce/modules/juce_audio_processors/juce_audio_processors.i: __/libs/juce
 
 # target to preprocess a source file
 __/libs/juce/modules/juce_audio_processors/juce_audio_processors.mm.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_audio_processors/juce_audio_processors.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_audio_processors/juce_audio_processors.mm.i
 .PHONY : __/libs/juce/modules/juce_audio_processors/juce_audio_processors.mm.i
 
 __/libs/juce/modules/juce_audio_processors/juce_audio_processors.s: __/libs/juce/modules/juce_audio_processors/juce_audio_processors.mm.s
@@ -693,7 +693,7 @@ __/libs/juce/modules/juce_audio_processors/juce_audio_processors.s: __/libs/juce
 
 # target to generate assembly for a file
 __/libs/juce/modules/juce_audio_processors/juce_audio_processors.mm.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_audio_processors/juce_audio_processors.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_audio_processors/juce_audio_processors.mm.s
 .PHONY : __/libs/juce/modules/juce_audio_processors/juce_audio_processors.mm.s
 
 __/libs/juce/modules/juce_audio_processors/juce_audio_processors_ara.o: __/libs/juce/modules/juce_audio_processors/juce_audio_processors_ara.cpp.o
@@ -701,7 +701,7 @@ __/libs/juce/modules/juce_audio_processors/juce_audio_processors_ara.o: __/libs/
 
 # target to build an object file
 __/libs/juce/modules/juce_audio_processors/juce_audio_processors_ara.cpp.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_audio_processors/juce_audio_processors_ara.cpp.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_audio_processors/juce_audio_processors_ara.cpp.o
 .PHONY : __/libs/juce/modules/juce_audio_processors/juce_audio_processors_ara.cpp.o
 
 __/libs/juce/modules/juce_audio_processors/juce_audio_processors_ara.i: __/libs/juce/modules/juce_audio_processors/juce_audio_processors_ara.cpp.i
@@ -709,7 +709,7 @@ __/libs/juce/modules/juce_audio_processors/juce_audio_processors_ara.i: __/libs/
 
 # target to preprocess a source file
 __/libs/juce/modules/juce_audio_processors/juce_audio_processors_ara.cpp.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_audio_processors/juce_audio_processors_ara.cpp.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_audio_processors/juce_audio_processors_ara.cpp.i
 .PHONY : __/libs/juce/modules/juce_audio_processors/juce_audio_processors_ara.cpp.i
 
 __/libs/juce/modules/juce_audio_processors/juce_audio_processors_ara.s: __/libs/juce/modules/juce_audio_processors/juce_audio_processors_ara.cpp.s
@@ -717,7 +717,7 @@ __/libs/juce/modules/juce_audio_processors/juce_audio_processors_ara.s: __/libs/
 
 # target to generate assembly for a file
 __/libs/juce/modules/juce_audio_processors/juce_audio_processors_ara.cpp.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_audio_processors/juce_audio_processors_ara.cpp.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_audio_processors/juce_audio_processors_ara.cpp.s
 .PHONY : __/libs/juce/modules/juce_audio_processors/juce_audio_processors_ara.cpp.s
 
 __/libs/juce/modules/juce_audio_processors/juce_audio_processors_lv2_libs.o: __/libs/juce/modules/juce_audio_processors/juce_audio_processors_lv2_libs.cpp.o
@@ -725,7 +725,7 @@ __/libs/juce/modules/juce_audio_processors/juce_audio_processors_lv2_libs.o: __/
 
 # target to build an object file
 __/libs/juce/modules/juce_audio_processors/juce_audio_processors_lv2_libs.cpp.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_audio_processors/juce_audio_processors_lv2_libs.cpp.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_audio_processors/juce_audio_processors_lv2_libs.cpp.o
 .PHONY : __/libs/juce/modules/juce_audio_processors/juce_audio_processors_lv2_libs.cpp.o
 
 __/libs/juce/modules/juce_audio_processors/juce_audio_processors_lv2_libs.i: __/libs/juce/modules/juce_audio_processors/juce_audio_processors_lv2_libs.cpp.i
@@ -733,7 +733,7 @@ __/libs/juce/modules/juce_audio_processors/juce_audio_processors_lv2_libs.i: __/
 
 # target to preprocess a source file
 __/libs/juce/modules/juce_audio_processors/juce_audio_processors_lv2_libs.cpp.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_audio_processors/juce_audio_processors_lv2_libs.cpp.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_audio_processors/juce_audio_processors_lv2_libs.cpp.i
 .PHONY : __/libs/juce/modules/juce_audio_processors/juce_audio_processors_lv2_libs.cpp.i
 
 __/libs/juce/modules/juce_audio_processors/juce_audio_processors_lv2_libs.s: __/libs/juce/modules/juce_audio_processors/juce_audio_processors_lv2_libs.cpp.s
@@ -741,7 +741,7 @@ __/libs/juce/modules/juce_audio_processors/juce_audio_processors_lv2_libs.s: __/
 
 # target to generate assembly for a file
 __/libs/juce/modules/juce_audio_processors/juce_audio_processors_lv2_libs.cpp.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_audio_processors/juce_audio_processors_lv2_libs.cpp.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_audio_processors/juce_audio_processors_lv2_libs.cpp.s
 .PHONY : __/libs/juce/modules/juce_audio_processors/juce_audio_processors_lv2_libs.cpp.s
 
 __/libs/juce/modules/juce_audio_utils/juce_audio_utils.o: __/libs/juce/modules/juce_audio_utils/juce_audio_utils.mm.o
@@ -749,7 +749,7 @@ __/libs/juce/modules/juce_audio_utils/juce_audio_utils.o: __/libs/juce/modules/j
 
 # target to build an object file
 __/libs/juce/modules/juce_audio_utils/juce_audio_utils.mm.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_audio_utils/juce_audio_utils.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_audio_utils/juce_audio_utils.mm.o
 .PHONY : __/libs/juce/modules/juce_audio_utils/juce_audio_utils.mm.o
 
 __/libs/juce/modules/juce_audio_utils/juce_audio_utils.i: __/libs/juce/modules/juce_audio_utils/juce_audio_utils.mm.i
@@ -757,7 +757,7 @@ __/libs/juce/modules/juce_audio_utils/juce_audio_utils.i: __/libs/juce/modules/j
 
 # target to preprocess a source file
 __/libs/juce/modules/juce_audio_utils/juce_audio_utils.mm.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_audio_utils/juce_audio_utils.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_audio_utils/juce_audio_utils.mm.i
 .PHONY : __/libs/juce/modules/juce_audio_utils/juce_audio_utils.mm.i
 
 __/libs/juce/modules/juce_audio_utils/juce_audio_utils.s: __/libs/juce/modules/juce_audio_utils/juce_audio_utils.mm.s
@@ -765,7 +765,7 @@ __/libs/juce/modules/juce_audio_utils/juce_audio_utils.s: __/libs/juce/modules/j
 
 # target to generate assembly for a file
 __/libs/juce/modules/juce_audio_utils/juce_audio_utils.mm.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_audio_utils/juce_audio_utils.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_audio_utils/juce_audio_utils.mm.s
 .PHONY : __/libs/juce/modules/juce_audio_utils/juce_audio_utils.mm.s
 
 __/libs/juce/modules/juce_core/juce_core.o: __/libs/juce/modules/juce_core/juce_core.mm.o
@@ -773,7 +773,7 @@ __/libs/juce/modules/juce_core/juce_core.o: __/libs/juce/modules/juce_core/juce_
 
 # target to build an object file
 __/libs/juce/modules/juce_core/juce_core.mm.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_core/juce_core.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_core/juce_core.mm.o
 .PHONY : __/libs/juce/modules/juce_core/juce_core.mm.o
 
 __/libs/juce/modules/juce_core/juce_core.i: __/libs/juce/modules/juce_core/juce_core.mm.i
@@ -781,7 +781,7 @@ __/libs/juce/modules/juce_core/juce_core.i: __/libs/juce/modules/juce_core/juce_
 
 # target to preprocess a source file
 __/libs/juce/modules/juce_core/juce_core.mm.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_core/juce_core.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_core/juce_core.mm.i
 .PHONY : __/libs/juce/modules/juce_core/juce_core.mm.i
 
 __/libs/juce/modules/juce_core/juce_core.s: __/libs/juce/modules/juce_core/juce_core.mm.s
@@ -789,7 +789,7 @@ __/libs/juce/modules/juce_core/juce_core.s: __/libs/juce/modules/juce_core/juce_
 
 # target to generate assembly for a file
 __/libs/juce/modules/juce_core/juce_core.mm.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_core/juce_core.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_core/juce_core.mm.s
 .PHONY : __/libs/juce/modules/juce_core/juce_core.mm.s
 
 __/libs/juce/modules/juce_core/juce_core_CompilationTime.o: __/libs/juce/modules/juce_core/juce_core_CompilationTime.cpp.o
@@ -797,7 +797,7 @@ __/libs/juce/modules/juce_core/juce_core_CompilationTime.o: __/libs/juce/modules
 
 # target to build an object file
 __/libs/juce/modules/juce_core/juce_core_CompilationTime.cpp.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_core/juce_core_CompilationTime.cpp.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_core/juce_core_CompilationTime.cpp.o
 .PHONY : __/libs/juce/modules/juce_core/juce_core_CompilationTime.cpp.o
 
 __/libs/juce/modules/juce_core/juce_core_CompilationTime.i: __/libs/juce/modules/juce_core/juce_core_CompilationTime.cpp.i
@@ -805,7 +805,7 @@ __/libs/juce/modules/juce_core/juce_core_CompilationTime.i: __/libs/juce/modules
 
 # target to preprocess a source file
 __/libs/juce/modules/juce_core/juce_core_CompilationTime.cpp.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_core/juce_core_CompilationTime.cpp.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_core/juce_core_CompilationTime.cpp.i
 .PHONY : __/libs/juce/modules/juce_core/juce_core_CompilationTime.cpp.i
 
 __/libs/juce/modules/juce_core/juce_core_CompilationTime.s: __/libs/juce/modules/juce_core/juce_core_CompilationTime.cpp.s
@@ -813,7 +813,7 @@ __/libs/juce/modules/juce_core/juce_core_CompilationTime.s: __/libs/juce/modules
 
 # target to generate assembly for a file
 __/libs/juce/modules/juce_core/juce_core_CompilationTime.cpp.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_core/juce_core_CompilationTime.cpp.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_core/juce_core_CompilationTime.cpp.s
 .PHONY : __/libs/juce/modules/juce_core/juce_core_CompilationTime.cpp.s
 
 __/libs/juce/modules/juce_data_structures/juce_data_structures.o: __/libs/juce/modules/juce_data_structures/juce_data_structures.mm.o
@@ -821,7 +821,7 @@ __/libs/juce/modules/juce_data_structures/juce_data_structures.o: __/libs/juce/m
 
 # target to build an object file
 __/libs/juce/modules/juce_data_structures/juce_data_structures.mm.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_data_structures/juce_data_structures.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_data_structures/juce_data_structures.mm.o
 .PHONY : __/libs/juce/modules/juce_data_structures/juce_data_structures.mm.o
 
 __/libs/juce/modules/juce_data_structures/juce_data_structures.i: __/libs/juce/modules/juce_data_structures/juce_data_structures.mm.i
@@ -829,7 +829,7 @@ __/libs/juce/modules/juce_data_structures/juce_data_structures.i: __/libs/juce/m
 
 # target to preprocess a source file
 __/libs/juce/modules/juce_data_structures/juce_data_structures.mm.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_data_structures/juce_data_structures.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_data_structures/juce_data_structures.mm.i
 .PHONY : __/libs/juce/modules/juce_data_structures/juce_data_structures.mm.i
 
 __/libs/juce/modules/juce_data_structures/juce_data_structures.s: __/libs/juce/modules/juce_data_structures/juce_data_structures.mm.s
@@ -837,7 +837,7 @@ __/libs/juce/modules/juce_data_structures/juce_data_structures.s: __/libs/juce/m
 
 # target to generate assembly for a file
 __/libs/juce/modules/juce_data_structures/juce_data_structures.mm.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_data_structures/juce_data_structures.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_data_structures/juce_data_structures.mm.s
 .PHONY : __/libs/juce/modules/juce_data_structures/juce_data_structures.mm.s
 
 __/libs/juce/modules/juce_events/juce_events.o: __/libs/juce/modules/juce_events/juce_events.mm.o
@@ -845,7 +845,7 @@ __/libs/juce/modules/juce_events/juce_events.o: __/libs/juce/modules/juce_events
 
 # target to build an object file
 __/libs/juce/modules/juce_events/juce_events.mm.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_events/juce_events.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_events/juce_events.mm.o
 .PHONY : __/libs/juce/modules/juce_events/juce_events.mm.o
 
 __/libs/juce/modules/juce_events/juce_events.i: __/libs/juce/modules/juce_events/juce_events.mm.i
@@ -853,7 +853,7 @@ __/libs/juce/modules/juce_events/juce_events.i: __/libs/juce/modules/juce_events
 
 # target to preprocess a source file
 __/libs/juce/modules/juce_events/juce_events.mm.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_events/juce_events.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_events/juce_events.mm.i
 .PHONY : __/libs/juce/modules/juce_events/juce_events.mm.i
 
 __/libs/juce/modules/juce_events/juce_events.s: __/libs/juce/modules/juce_events/juce_events.mm.s
@@ -861,7 +861,7 @@ __/libs/juce/modules/juce_events/juce_events.s: __/libs/juce/modules/juce_events
 
 # target to generate assembly for a file
 __/libs/juce/modules/juce_events/juce_events.mm.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_events/juce_events.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_events/juce_events.mm.s
 .PHONY : __/libs/juce/modules/juce_events/juce_events.mm.s
 
 __/libs/juce/modules/juce_graphics/juce_graphics.o: __/libs/juce/modules/juce_graphics/juce_graphics.mm.o
@@ -869,7 +869,7 @@ __/libs/juce/modules/juce_graphics/juce_graphics.o: __/libs/juce/modules/juce_gr
 
 # target to build an object file
 __/libs/juce/modules/juce_graphics/juce_graphics.mm.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_graphics/juce_graphics.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_graphics/juce_graphics.mm.o
 .PHONY : __/libs/juce/modules/juce_graphics/juce_graphics.mm.o
 
 __/libs/juce/modules/juce_graphics/juce_graphics.i: __/libs/juce/modules/juce_graphics/juce_graphics.mm.i
@@ -877,7 +877,7 @@ __/libs/juce/modules/juce_graphics/juce_graphics.i: __/libs/juce/modules/juce_gr
 
 # target to preprocess a source file
 __/libs/juce/modules/juce_graphics/juce_graphics.mm.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_graphics/juce_graphics.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_graphics/juce_graphics.mm.i
 .PHONY : __/libs/juce/modules/juce_graphics/juce_graphics.mm.i
 
 __/libs/juce/modules/juce_graphics/juce_graphics.s: __/libs/juce/modules/juce_graphics/juce_graphics.mm.s
@@ -885,7 +885,7 @@ __/libs/juce/modules/juce_graphics/juce_graphics.s: __/libs/juce/modules/juce_gr
 
 # target to generate assembly for a file
 __/libs/juce/modules/juce_graphics/juce_graphics.mm.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_graphics/juce_graphics.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_graphics/juce_graphics.mm.s
 .PHONY : __/libs/juce/modules/juce_graphics/juce_graphics.mm.s
 
 __/libs/juce/modules/juce_graphics/juce_graphics_Harfbuzz.o: __/libs/juce/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.o
@@ -893,7 +893,7 @@ __/libs/juce/modules/juce_graphics/juce_graphics_Harfbuzz.o: __/libs/juce/module
 
 # target to build an object file
 __/libs/juce/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.o
 .PHONY : __/libs/juce/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.o
 
 __/libs/juce/modules/juce_graphics/juce_graphics_Harfbuzz.i: __/libs/juce/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.i
@@ -901,7 +901,7 @@ __/libs/juce/modules/juce_graphics/juce_graphics_Harfbuzz.i: __/libs/juce/module
 
 # target to preprocess a source file
 __/libs/juce/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.i
 .PHONY : __/libs/juce/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.i
 
 __/libs/juce/modules/juce_graphics/juce_graphics_Harfbuzz.s: __/libs/juce/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.s
@@ -909,15 +909,39 @@ __/libs/juce/modules/juce_graphics/juce_graphics_Harfbuzz.s: __/libs/juce/module
 
 # target to generate assembly for a file
 __/libs/juce/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.s
 .PHONY : __/libs/juce/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.s
+
+__/libs/juce/modules/juce_graphics/juce_graphics_Sheenbidi.o: __/libs/juce/modules/juce_graphics/juce_graphics_Sheenbidi.c.o
+.PHONY : __/libs/juce/modules/juce_graphics/juce_graphics_Sheenbidi.o
+
+# target to build an object file
+__/libs/juce/modules/juce_graphics/juce_graphics_Sheenbidi.c.o:
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_graphics/juce_graphics_Sheenbidi.c.o
+.PHONY : __/libs/juce/modules/juce_graphics/juce_graphics_Sheenbidi.c.o
+
+__/libs/juce/modules/juce_graphics/juce_graphics_Sheenbidi.i: __/libs/juce/modules/juce_graphics/juce_graphics_Sheenbidi.c.i
+.PHONY : __/libs/juce/modules/juce_graphics/juce_graphics_Sheenbidi.i
+
+# target to preprocess a source file
+__/libs/juce/modules/juce_graphics/juce_graphics_Sheenbidi.c.i:
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_graphics/juce_graphics_Sheenbidi.c.i
+.PHONY : __/libs/juce/modules/juce_graphics/juce_graphics_Sheenbidi.c.i
+
+__/libs/juce/modules/juce_graphics/juce_graphics_Sheenbidi.s: __/libs/juce/modules/juce_graphics/juce_graphics_Sheenbidi.c.s
+.PHONY : __/libs/juce/modules/juce_graphics/juce_graphics_Sheenbidi.s
+
+# target to generate assembly for a file
+__/libs/juce/modules/juce_graphics/juce_graphics_Sheenbidi.c.s:
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_graphics/juce_graphics_Sheenbidi.c.s
+.PHONY : __/libs/juce/modules/juce_graphics/juce_graphics_Sheenbidi.c.s
 
 __/libs/juce/modules/juce_gui_basics/juce_gui_basics.o: __/libs/juce/modules/juce_gui_basics/juce_gui_basics.mm.o
 .PHONY : __/libs/juce/modules/juce_gui_basics/juce_gui_basics.o
 
 # target to build an object file
 __/libs/juce/modules/juce_gui_basics/juce_gui_basics.mm.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_gui_basics/juce_gui_basics.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_gui_basics/juce_gui_basics.mm.o
 .PHONY : __/libs/juce/modules/juce_gui_basics/juce_gui_basics.mm.o
 
 __/libs/juce/modules/juce_gui_basics/juce_gui_basics.i: __/libs/juce/modules/juce_gui_basics/juce_gui_basics.mm.i
@@ -925,7 +949,7 @@ __/libs/juce/modules/juce_gui_basics/juce_gui_basics.i: __/libs/juce/modules/juc
 
 # target to preprocess a source file
 __/libs/juce/modules/juce_gui_basics/juce_gui_basics.mm.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_gui_basics/juce_gui_basics.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_gui_basics/juce_gui_basics.mm.i
 .PHONY : __/libs/juce/modules/juce_gui_basics/juce_gui_basics.mm.i
 
 __/libs/juce/modules/juce_gui_basics/juce_gui_basics.s: __/libs/juce/modules/juce_gui_basics/juce_gui_basics.mm.s
@@ -933,7 +957,7 @@ __/libs/juce/modules/juce_gui_basics/juce_gui_basics.s: __/libs/juce/modules/juc
 
 # target to generate assembly for a file
 __/libs/juce/modules/juce_gui_basics/juce_gui_basics.mm.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_gui_basics/juce_gui_basics.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_gui_basics/juce_gui_basics.mm.s
 .PHONY : __/libs/juce/modules/juce_gui_basics/juce_gui_basics.mm.s
 
 __/libs/juce/modules/juce_gui_extra/juce_gui_extra.o: __/libs/juce/modules/juce_gui_extra/juce_gui_extra.mm.o
@@ -941,7 +965,7 @@ __/libs/juce/modules/juce_gui_extra/juce_gui_extra.o: __/libs/juce/modules/juce_
 
 # target to build an object file
 __/libs/juce/modules/juce_gui_extra/juce_gui_extra.mm.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_gui_extra/juce_gui_extra.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_gui_extra/juce_gui_extra.mm.o
 .PHONY : __/libs/juce/modules/juce_gui_extra/juce_gui_extra.mm.o
 
 __/libs/juce/modules/juce_gui_extra/juce_gui_extra.i: __/libs/juce/modules/juce_gui_extra/juce_gui_extra.mm.i
@@ -949,7 +973,7 @@ __/libs/juce/modules/juce_gui_extra/juce_gui_extra.i: __/libs/juce/modules/juce_
 
 # target to preprocess a source file
 __/libs/juce/modules/juce_gui_extra/juce_gui_extra.mm.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_gui_extra/juce_gui_extra.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_gui_extra/juce_gui_extra.mm.i
 .PHONY : __/libs/juce/modules/juce_gui_extra/juce_gui_extra.mm.i
 
 __/libs/juce/modules/juce_gui_extra/juce_gui_extra.s: __/libs/juce/modules/juce_gui_extra/juce_gui_extra.mm.s
@@ -957,15 +981,39 @@ __/libs/juce/modules/juce_gui_extra/juce_gui_extra.s: __/libs/juce/modules/juce_
 
 # target to generate assembly for a file
 __/libs/juce/modules/juce_gui_extra/juce_gui_extra.mm.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/__/libs/juce/modules/juce_gui_extra/juce_gui_extra.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/__/libs/juce/modules/juce_gui_extra/juce_gui_extra.mm.s
 .PHONY : __/libs/juce/modules/juce_gui_extra/juce_gui_extra.mm.s
+
+src/DSP/lfo.o: src/DSP/lfo.cpp.o
+.PHONY : src/DSP/lfo.o
+
+# target to build an object file
+src/DSP/lfo.cpp.o:
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/src/DSP/lfo.cpp.o
+.PHONY : src/DSP/lfo.cpp.o
+
+src/DSP/lfo.i: src/DSP/lfo.cpp.i
+.PHONY : src/DSP/lfo.i
+
+# target to preprocess a source file
+src/DSP/lfo.cpp.i:
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/src/DSP/lfo.cpp.i
+.PHONY : src/DSP/lfo.cpp.i
+
+src/DSP/lfo.s: src/DSP/lfo.cpp.s
+.PHONY : src/DSP/lfo.s
+
+# target to generate assembly for a file
+src/DSP/lfo.cpp.s:
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/src/DSP/lfo.cpp.s
+.PHONY : src/DSP/lfo.cpp.s
 
 src/PluginEditor.o: src/PluginEditor.cpp.o
 .PHONY : src/PluginEditor.o
 
 # target to build an object file
 src/PluginEditor.cpp.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/src/PluginEditor.cpp.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/src/PluginEditor.cpp.o
 .PHONY : src/PluginEditor.cpp.o
 
 src/PluginEditor.i: src/PluginEditor.cpp.i
@@ -973,7 +1021,7 @@ src/PluginEditor.i: src/PluginEditor.cpp.i
 
 # target to preprocess a source file
 src/PluginEditor.cpp.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/src/PluginEditor.cpp.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/src/PluginEditor.cpp.i
 .PHONY : src/PluginEditor.cpp.i
 
 src/PluginEditor.s: src/PluginEditor.cpp.s
@@ -981,7 +1029,7 @@ src/PluginEditor.s: src/PluginEditor.cpp.s
 
 # target to generate assembly for a file
 src/PluginEditor.cpp.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/src/PluginEditor.cpp.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/src/PluginEditor.cpp.s
 .PHONY : src/PluginEditor.cpp.s
 
 src/PluginProcessor.o: src/PluginProcessor.cpp.o
@@ -989,7 +1037,7 @@ src/PluginProcessor.o: src/PluginProcessor.cpp.o
 
 # target to build an object file
 src/PluginProcessor.cpp.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/src/PluginProcessor.cpp.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/src/PluginProcessor.cpp.o
 .PHONY : src/PluginProcessor.cpp.o
 
 src/PluginProcessor.i: src/PluginProcessor.cpp.i
@@ -997,7 +1045,7 @@ src/PluginProcessor.i: src/PluginProcessor.cpp.i
 
 # target to preprocess a source file
 src/PluginProcessor.cpp.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/src/PluginProcessor.cpp.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/src/PluginProcessor.cpp.i
 .PHONY : src/PluginProcessor.cpp.i
 
 src/PluginProcessor.s: src/PluginProcessor.cpp.s
@@ -1005,7 +1053,7 @@ src/PluginProcessor.s: src/PluginProcessor.cpp.s
 
 # target to generate assembly for a file
 src/PluginProcessor.cpp.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/src/PluginProcessor.cpp.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/src/PluginProcessor.cpp.s
 .PHONY : src/PluginProcessor.cpp.s
 
 # Help Target
@@ -1020,11 +1068,11 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... ThreeDSynth_All"
-	@echo "... ThreeDSynth"
-	@echo "... ThreeDSynth_AU"
-	@echo "... ThreeDSynth_Standalone"
-	@echo "... ThreeDSynth_VST3"
+	@echo "... ThreeDOne_All"
+	@echo "... ThreeDOne"
+	@echo "... ThreeDOne_AU"
+	@echo "... ThreeDOne_Standalone"
+	@echo "... ThreeDOne_VST3"
 	@echo "... juce_vst3_helper"
 	@echo "... __/libs/juce/modules/juce_audio_basics/juce_audio_basics.o"
 	@echo "... __/libs/juce/modules/juce_audio_basics/juce_audio_basics.i"
@@ -1101,12 +1149,18 @@ help:
 	@echo "... __/libs/juce/modules/juce_graphics/juce_graphics_Harfbuzz.o"
 	@echo "... __/libs/juce/modules/juce_graphics/juce_graphics_Harfbuzz.i"
 	@echo "... __/libs/juce/modules/juce_graphics/juce_graphics_Harfbuzz.s"
+	@echo "... __/libs/juce/modules/juce_graphics/juce_graphics_Sheenbidi.o"
+	@echo "... __/libs/juce/modules/juce_graphics/juce_graphics_Sheenbidi.i"
+	@echo "... __/libs/juce/modules/juce_graphics/juce_graphics_Sheenbidi.s"
 	@echo "... __/libs/juce/modules/juce_gui_basics/juce_gui_basics.o"
 	@echo "... __/libs/juce/modules/juce_gui_basics/juce_gui_basics.i"
 	@echo "... __/libs/juce/modules/juce_gui_basics/juce_gui_basics.s"
 	@echo "... __/libs/juce/modules/juce_gui_extra/juce_gui_extra.o"
 	@echo "... __/libs/juce/modules/juce_gui_extra/juce_gui_extra.i"
 	@echo "... __/libs/juce/modules/juce_gui_extra/juce_gui_extra.s"
+	@echo "... src/DSP/lfo.o"
+	@echo "... src/DSP/lfo.i"
+	@echo "... src/DSP/lfo.s"
 	@echo "... src/PluginEditor.o"
 	@echo "... src/PluginEditor.i"
 	@echo "... src/PluginEditor.s"
@@ -1124,7 +1178,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(CMAKE_COMMAND) -P "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/CMakeFiles/VerifyGlobs.cmake"
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(CMAKE_COMMAND) -P "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/CMakeFiles/VerifyGlobs.cmake"
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

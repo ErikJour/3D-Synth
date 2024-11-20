@@ -14,14 +14,21 @@
 class WaveGenerator
 {
 public:
-    enum class WaveType { Sine, Sawtooth, Square };
+    enum class WaveType { Sine, Triangle, Square };
     
     WaveGenerator(): phase(0.0f), increment(0.0f) {}
     ~WaveGenerator() = default;
+
+    void resetPhase()
+
+    {
+      phase = 0.0f;
+    }
     
-    void setFrequency(float frequency, float sampleRate)
+    void setFrequency(float frequency, float sampleRate, float detuneAmount = 0.01f)
     {
         increment = frequency / sampleRate;
+        phase = 0.0f;
     }
     
     void setWaveType(WaveType type)
@@ -31,26 +38,43 @@ public:
     
     float getNextSample()
     {
-        float currentSample = 0;
-        
-        if (waveType == WaveType::Sine){
-            
-            currentSample = std::sin(phase * 2.0 * M_PI);
+
+      float currentSample = 0;
+
+      //SINE
+
+      if (waveType == WaveType::Sine)
+      {
+        currentSample = std::sin(phase * 2.0 * M_PI);
+      }
+
+      //TRINAGLE
+
+      else if (waveType == WaveType::Triangle)
+      {
+        if (phase <= 0.5f)
+        {
+        currentSample = 2.0f * phase - 1.0f;
         }
-        else if (waveType == WaveType::Sawtooth){
-            
-            currentSample = 2.0f * phase - 1.0f;
+        else
+        {
+            currentSample = 1.0f - 2.0f * phase;
         }
-        else if (waveType == WaveType::Square){
-            currentSample = (phase < 0.5f) ? 1.0 : -1.0;
-        }
-        
-            phase += increment;
-        
-            if (phase >= 1.0f)
-                phase -= 1.0f;
-        
-        return currentSample;
+      }
+
+      //SQUARE
+
+      else if (waveType == WaveType::Square)
+      {
+        currentSample = (phase < 0.5f) ? 1.0 : -1.0;
+      }
+
+      phase += increment;
+      if (phase >= 1.0f)
+      phase -= 1.0f;
+
+
+    return currentSample;
     }
     
 private:

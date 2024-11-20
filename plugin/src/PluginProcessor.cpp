@@ -6,13 +6,13 @@
   ==============================================================================
 */
 
-#include "ThreeDSynth/PluginProcessor.h"
-#include "ThreeDSynth/PluginEditor.h"
-
+#include "ThreeDPartOne/PluginProcessor.h"
+#include "ThreeDPartOne/PluginEditor.h"
+#include <cmath>
 
 //==============================================================================
 
-namespace ThreeDSynth {
+namespace ThreeDOne { 
 
 NewProjectAudioProcessor::NewProjectAudioProcessor()
 #ifndef JucePlugin_PreferredChannelConfigurations
@@ -28,14 +28,14 @@ NewProjectAudioProcessor::NewProjectAudioProcessor()
 {
     
     mySynth.clearVoices();
-    for (int i = 0; i < 5; ++i)
+    for (int i = 0; i < 6; ++i)
     {
-        mySynth.addVoice (new SynthVoice());
+    mySynth.addVoice (new SynthVoice());
     }
 //    
     mySynth.clearSounds();
     mySynth.addSound (new SynthSound());
-
+    setGain(-60.0f);
     
 }
 
@@ -46,7 +46,7 @@ NewProjectAudioProcessor::~NewProjectAudioProcessor()
 //==============================================================================
 const juce::String NewProjectAudioProcessor::getName() const
 {
-    juce::String pluginName = "Three-D Synth";
+    juce::String pluginName = "Three-D One";
     return pluginName;
 }
 
@@ -109,6 +109,7 @@ void NewProjectAudioProcessor::changeProgramName (int index, const juce::String&
 //==============================================================================
 void NewProjectAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
+
     currentSampleRate = sampleRate;
     
     mySynth.setCurrentPlaybackSampleRate(sampleRate);
@@ -151,10 +152,41 @@ bool NewProjectAudioProcessor::isBusesLayoutSupported (const BusesLayout& layout
 }
 #endif
 
-void NewProjectAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
+void NewProjectAudioProcessor::handleMidiMessage(const juce::MidiMessage& m)
 {
-    buffer.clear();
+    if (m.isNoteOn())
+    {
+        float velocity = m.getVelocity() * 127.0f;
+        float baseFrequency = juce::MidiMessage::getMidiNoteInHertz(m.getNoteNumber());
+        float adjustedFrequency = std::log2(baseFrequency) * baseFrequency;
+
+        if (velocityListener != nullptr)
+        {
+            velocityListener->onVelocityChanged(velocity);
+        }
+
+         if (frequencyListener != nullptr)
+        {
+            frequencyListener->onFrequencyChanged(adjustedFrequency);
+        }
+        mySynth.noteOn(m.getChannel(), m.getNoteNumber(), m.getVelocity());
+    }
+    else if (m.isNoteOff())
+    {
+        mySynth.noteOff(m.getChannel(), m.getNoteNumber(), m.getVelocity(), true);
+
+    }
+     else if (m.isAllNotesOff())
+    {
+        mySynth.allNotesOff(m.getChannel(), true);
+
+    }
    
+}
+
+
+void NewProjectAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
+{  
     juce::ScopedNoDenormals noDenormals;
     
     auto totalNumOutputChannels = getTotalNumOutputChannels();
@@ -163,6 +195,10 @@ void NewProjectAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, j
         buffer.clear(i, 0, buffer.getNumSamples());
     
     mySynth.renderNextBlock(buffer, midiMessages, 0, buffer.getNumSamples());
+
+    keyboardState.processNextMidiBuffer(midiMessages, 0, midiMessages.getNumEvents(), false);
+
+    gain = 0.3f;
     
     buffer.applyGain(gain);
 }
@@ -170,12 +206,15 @@ void NewProjectAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, j
 //==============================================================================
 bool NewProjectAudioProcessor::hasEditor() const
 {
-    return true; // (change this to false if you choose to not supply an editor)
+    return true; 
 }
 
 juce::AudioProcessorEditor* NewProjectAudioProcessor::createEditor()
 {
-    return new NewProjectAudioProcessorEditor (*this);
+    auto* editor = new NewProjectAudioProcessorEditor(*this);
+    setVelocityListener(editor);
+    setFrequencyListener(editor); 
+    return editor;
 }
 
 //==============================================================================
@@ -193,7 +232,6 @@ void NewProjectAudioProcessor::setWaveType(int waveType)
 {
     currentWaveType = waveType;
     
-    // Iterate through all voices and update their wave type
     for (int i = 0; i < mySynth.getNumVoices(); ++i)
     {
         if (auto voice = dynamic_cast<SynthVoice*>(mySynth.getVoice(i)))
@@ -205,27 +243,26 @@ void NewProjectAudioProcessor::setWaveType(int waveType)
 
 void NewProjectAudioProcessor::setGain(float newGain)
 {
-    gain = newGain;
+    gain = std::pow(10.0f, newGain / 20.0f);
     
 }
 
-void NewProjectAudioProcessor::setNoiseLevel(float newNoiseLevel)
+void NewProjectAudioProcessor::setTremoloForVoices (bool isOn)
 {
-    noiseLevel = newNoiseLevel;
-    
     for (int i = 0; i < mySynth.getNumVoices(); ++i)
     {
-        if (auto voice = dynamic_cast<SynthVoice*>(mySynth.getVoice(i)))
+        if (auto* voice = dynamic_cast<SynthVoice*>(mySynth.getVoice(i)))
         {
-            voice->updateNoiseLevel(noiseLevel);
+            voice->setTremolo(isOn);  // Set tremolo on each voice
         }
     }
 }
+
+
 }
 //==============================================================================
 // This creates new instances of the plugin..
 juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter()
 {
-    return new ThreeDSynth::NewProjectAudioProcessor();
+    return new ThreeDOne::NewProjectAudioProcessor();
 }
-

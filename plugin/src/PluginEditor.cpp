@@ -6,8 +6,9 @@
   ==============================================================================
 */
 
-#include "ThreeDSynth/PluginProcessor.h"
-#include "ThreeDSynth/PluginEditor.h"
+#include "ThreeDPartOne/PluginProcessor.h"
+#include "ThreeDPartOne/PluginEditor.h"
+
 
 namespace {
 auto streamToVector (juce::InputStream& stream) {
@@ -50,7 +51,7 @@ const char* getMimeForExtension (const juce::String& extension)
 
 //==============================================================================
 
-namespace ThreeDSynth {
+namespace ThreeDOne {
 
 NewProjectAudioProcessorEditor::NewProjectAudioProcessorEditor (NewProjectAudioProcessor& p)
     : AudioProcessorEditor (&p), audioProcessor (p),
@@ -65,130 +66,89 @@ NewProjectAudioProcessorEditor::NewProjectAudioProcessorEditor (NewProjectAudioP
             juce::WebBrowserComponent::NativeFunctionCompletion completion){
                nativeFunction(args, std::move(completion)); 
             }
-        )} 
+        )},
+    midiKeyboardComponent(p.keyboardState, juce::MidiKeyboardComponent::horizontalKeyboard)
+
 {
     juce::ignoreUnused (audioProcessor);
 
-
-    waveTypeSlider.setRange(0, 2, 1);
-    waveTypeSlider.setSliderStyle(juce::Slider::SliderStyle::RotaryHorizontalVerticalDrag);
-    waveTypeSlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, 0, 0);
-    waveTypeSlider.addListener(this);
-    addAndMakeVisible(waveTypeSlider);
-    
-    gainSlider.setRange(-30.0f, 0.0f, 0.01f);
-    gainSlider.setSliderStyle(juce::Slider::SliderStyle::RotaryHorizontalVerticalDrag);
-    gainSlider.setTextBoxStyle(juce::Slider::NoTextBox, false, 0, 0);
-    gainSlider.addListener(this);
-    addAndMakeVisible(gainSlider);
-    gainSlider.setValue(-10.0f);
-
-//  Noise Level
-    noiseLevelSlider.setRange(0.0f, 0.9f, 0.01f);
-    noiseLevelSlider.setSliderStyle(juce::Slider::SliderStyle::RotaryHorizontalVerticalDrag);
-    noiseLevelSlider.setTextBoxStyle(juce::Slider::NoTextBox, false, 0, 0);
-    noiseLevelSlider.addListener(this);
-    addAndMakeVisible(noiseLevelSlider);
-    
-//  WaveType Label
-    waveTypeLabel.setText("Wave Type", juce::dontSendNotification);
-    waveTypeLabel.setJustificationType(juce::Justification::centred);
-    waveTypeLabel.attachToComponent(&waveTypeSlider, false);
-    addAndMakeVisible(waveTypeLabel);
-    
-//  Gain Label
-    gainLabel.setText("Osc Gain", juce::dontSendNotification);
-    gainLabel.setJustificationType(juce::Justification::centred);
-    gainLabel.attachToComponent(&gainSlider, false);
-    addAndMakeVisible(gainLabel);
-
-//  Noise Label
-    noiseLabel.setText("Noise Level", juce::dontSendNotification);
-    noiseLabel.setJustificationType(juce::Justification::centred);
-    noiseLabel.attachToComponent(&noiseLevelSlider, false);
-    addAndMakeVisible(noiseLabel);
 
 //WebViewGUI
 
     webViewGui.goToURL("http://localhost:5173/");
     addAndMakeVisible(webViewGui);
 
+//MIDI Keyboard
+    addAndMakeVisible(midiKeyboardComponent);
+    p.keyboardState.addListener(this);
+
 //Window
 setResizable(true, true);         
 setSize (800, 600);
+
+
 
 }
 
 NewProjectAudioProcessorEditor::~NewProjectAudioProcessorEditor()
 {
-    waveTypeSlider.removeListener(this);
-    gainSlider.removeListener(this);
-    noiseLevelSlider.removeListener(this);
+    audioProcessor.keyboardState.removeListener(this);
 }
 
 //==============================================================================
 
 void NewProjectAudioProcessorEditor::resized()
 {
-    int width = getWidth();
-    int height = getHeight();
-
     auto bounds = getLocalBounds();
 
-    // Set the WebView GUI to take up the top 2/3 of the height
-    webViewGui.setBounds(bounds.removeFromTop(height * 2 / 3));
+    // Set the WebView GUI to take up the top half of the height
+    webViewGui.setBounds(bounds.removeFromTop(bounds.getHeight() * .8f));
 
-    // The remaining height for the bottom section where sliders will be placed
-    int bottomSectionHeight = height - webViewGui.getHeight();
-
-    // Calculate the width for each slider, with padding to center them
-    int padding = 20;  // Add some padding between sliders
-    int sliderWidth = (width - 2 * padding) / 3;  // Adjust for padding
-    int sliderHeight = bottomSectionHeight * 0.6;  // Use 60% of the bottom section height for sliders
-
-    // Calculate Y position for centering the sliders within the bottom section
-    int sliderY = webViewGui.getBottom() + (bottomSectionHeight - sliderHeight) / 2;
-
-    // Set the bounds for each slider, including the label spacing
-    waveTypeSlider.setBounds(padding, sliderY, sliderWidth, sliderHeight);
-    gainSlider.setBounds(padding + sliderWidth, sliderY, sliderWidth, sliderHeight);
-    noiseLevelSlider.setBounds(padding + 2 * sliderWidth, sliderY, sliderWidth, sliderHeight);
-
-    // Ensure labels are attached and visible (assuming labels are attached to sliders)
-    waveTypeLabel.setBounds(waveTypeSlider.getX(), waveTypeSlider.getBottom(), sliderWidth, 20);  // Adjust height for labels
-    gainLabel.setBounds(gainSlider.getX(), gainSlider.getBottom(), sliderWidth, 20);
-    noiseLabel.setBounds(noiseLevelSlider.getX(), noiseLevelSlider.getBottom(), sliderWidth, 20);
+    // Set bounds for the keyboard
+    midiKeyboardComponent.setBounds(bounds.removeFromBottom(bounds.getHeight()));
 }
 
-
-void NewProjectAudioProcessorEditor::sliderValueChanged(juce::Slider* slider)
+void NewProjectAudioProcessorEditor::handleNoteOn(juce::MidiKeyboardState*, int midiChannel, int midiNoteNumber, float velocity)
 {
-    if (slider == &waveTypeSlider)
-    {
-        int waveType = static_cast<int>(slider->getValue());
-        audioProcessor.setWaveType(waveType);
-    }
-    
-    
-    if (slider == &gainSlider)
-        {
-            double gainValueInDb = gainSlider.getValue();
-            double gainValueLinear = pow(10.0, gainValueInDb / 20.0);  // Convert dB to linear
-            
-            audioProcessor.setGain(gainValueLinear);
-            
-            std::cout << "Gain (dB): " << gainValueInDb << ", Gain (Linear): " << gainValueLinear << std::endl;
-        }
-        
-        
-    if (slider == &noiseLevelSlider)
-    {
-        double noiseLevelValue = noiseLevelSlider.getValue();
-        audioProcessor.setNoiseLevel(noiseLevelValue);
-        
-        std:: cout << "noise level: " << noiseLevelValue << std::endl;
-    }  
-  }
+ 
+    juce::MidiMessage m(juce::MidiMessage::noteOn(midiChannel, midiNoteNumber, velocity));
+    audioProcessor.handleMidiMessage(m);   
+
+    bool noteOn = true;
+    static const juce::Identifier EVENT_ID{"noteOn"};
+    webViewGui.emitEventIfBrowserIsVisible(EVENT_ID, noteOn);
+
+
+}
+
+void NewProjectAudioProcessorEditor::handleNoteOff(juce::MidiKeyboardState*, int midiChannel, int midiNoteNumber, float velocity)
+{
+    juce::MidiMessage m(juce::MidiMessage::noteOff(midiChannel, midiNoteNumber));
+    audioProcessor.handleMidiMessage(m);  
+     bool noteOff = true;
+    static const juce::Identifier EVENT_ID{"noteOff"};
+    webViewGui.emitEventIfBrowserIsVisible(EVENT_ID, noteOff);
+
+}
+
+void NewProjectAudioProcessorEditor::onVelocityChanged(float velocity)
+{
+    //Update Amplitude of Wave VIA MIDI Velocity
+
+    static const juce::Identifier EVENT_ID{"updateAmplitude"};
+    webViewGui.emitEventIfBrowserIsVisible(EVENT_ID, velocity);
+
+}
+
+void NewProjectAudioProcessorEditor::onFrequencyChanged(float frequency)
+{
+    //Update Frequency of Wave VIA MIDI Velocity
+
+    static const juce::Identifier EVENT_ID{"updateFrequency"};
+    webViewGui.emitEventIfBrowserIsVisible(EVENT_ID, frequency);
+
+}
+
 
     auto NewProjectAudioProcessorEditor::getResource (const juce::String& url) -> std::optional<Resource> {
 
@@ -211,20 +171,27 @@ void NewProjectAudioProcessorEditor::sliderValueChanged(juce::Slider* slider)
 void NewProjectAudioProcessorEditor::nativeFunction(const juce::Array<juce::var>& args,
                                                      juce::WebBrowserComponent::NativeFunctionCompletion completion)
 {
-    // Ensure there's a valid argument for frequency
-    if (args.size() > 0 && args[0].isDouble())
-    {
-        double uiGain = args[0];  
-
-        audioProcessor.setGain(static_cast<float>(uiGain));
-
-        gainSlider.setValue(uiGain, juce::dontSendNotification);
-
-        completion("Parameter updated to " + juce::String(uiGain));
+ if (args.size() == 1 && args[0].isArray()){
+        auto* arrayArg = args[0].getArray();
+        if (arrayArg != nullptr && arrayArg->size() >= 2)
+        {
+            std::string paramType = arrayArg->getReference(0).toString().toStdString();
+            float value = static_cast<float>(arrayArg->getReference(1));
+            bool isLfoOn = static_cast<bool>(arrayArg->getReference(1)); 
+            if(paramType == "lfoOn"){
+              
+                audioProcessor.setTremoloForVoices(isLfoOn);
+                completion(true);
+                return;
+            }
+            else if (paramType == "waveShape")
+            {
+                audioProcessor.setWaveType(static_cast<int>(value));
+                completion(true);
+            }
+        }
     }
-    else
-    {
-        completion("Invalid gain value");
-    }
+                completion(false);
 }
+
 }

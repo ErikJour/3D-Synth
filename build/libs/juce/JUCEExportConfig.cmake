@@ -54,11 +54,11 @@ endif()
 
 check_required_components("JUCE")
 
-set(JUCE_MODULES_DIR "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/libs/juce/modules" CACHE INTERNAL
+set(JUCE_MODULES_DIR "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/libs/juce/modules" CACHE INTERNAL
     "The path to JUCE modules")
 
-include("/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/libs/juce/extras/Build/CMake/JUCEModuleSupport.cmake")
-include("/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/libs/juce/extras/Build/CMake/JUCEUtils.cmake")
+include("/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/libs/juce/extras/Build/CMake/JUCEModuleSupport.cmake")
+include("/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/libs/juce/extras/Build/CMake/JUCEUtils.cmake")
 
 set(_juce_modules
     juce_analytics
@@ -110,7 +110,7 @@ unset(_targets_defined)
 unset(_targets_expected)
 
 foreach(_juce_module IN LISTS _juce_modules)
-    juce_add_module("/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/libs/juce/modules/${_juce_module}" ALIAS_NAMESPACE juce)
+    juce_add_module("/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/libs/juce/modules/${_juce_module}" ALIAS_NAMESPACE juce)
 endforeach()
 
 unset(_juce_modules)

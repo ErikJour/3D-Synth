@@ -1,4 +1,4 @@
-# Install script for directory: /Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/libs/juce/extras/Build/juceaide
+# Install script for directory: /Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/libs/juce/extras/Build/juceaide
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,10 +34,10 @@ endif()
 
 # Set path to fallback-tool for dependency-resolution.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/objdump")
+  set(CMAKE_OBJDUMP "/Library/Developer/CommandLineTools/usr/bin/objdump")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin/JUCE-8.0.1" TYPE PROGRAM FILES "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools/extras/Build/juceaide/juceaide_artefacts/Debug/juceaide")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin/JUCE-8.0.2" TYPE PROGRAM FILES "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools/extras/Build/juceaide/juceaide_artefacts/Debug/juceaide")
 endif()
 

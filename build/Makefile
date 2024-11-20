@@ -48,19 +48,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/homebrew/Cellar/cmake/3.30.0/bin/cmake
+CMAKE_COMMAND = /usr/local/Cellar/cmake/3.30.5/bin/cmake
 
 # The command to remove a file.
-RM = /opt/homebrew/Cellar/cmake/3.30.0/bin/cmake -E rm -f
+RM = /usr/local/Cellar/cmake/3.30.5/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth"
+CMAKE_SOURCE_DIR = "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build"
+CMAKE_BINARY_DIR = "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
-	/opt/homebrew/Cellar/cmake/3.30.0/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/local/Cellar/cmake/3.30.5/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -78,7 +78,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake to regenerate build system..."
-	/opt/homebrew/Cellar/cmake/3.30.0/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/local/Cellar/cmake/3.30.5/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -97,44 +97,44 @@ list_install_components/fast: list_install_components
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/opt/homebrew/Cellar/cmake/3.30.0/bin/cmake -P cmake_install.cmake
+	/usr/local/Cellar/cmake/3.30.5/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/opt/homebrew/Cellar/cmake/3.30.0/bin/cmake -P cmake_install.cmake
+	/usr/local/Cellar/cmake/3.30.5/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/opt/homebrew/Cellar/cmake/3.30.0/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/usr/local/Cellar/cmake/3.30.5/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/opt/homebrew/Cellar/cmake/3.30.0/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/usr/local/Cellar/cmake/3.30.5/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/opt/homebrew/Cellar/cmake/3.30.0/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/usr/local/Cellar/cmake/3.30.5/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/opt/homebrew/Cellar/cmake/3.30.0/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/usr/local/Cellar/cmake/3.30.5/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/CMakeFiles" "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build//CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/CMakeFiles" "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build//CMakeFiles/progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -158,74 +158,74 @@ preinstall/fast:
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -P "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/CMakeFiles/VerifyGlobs.cmake"
+	$(CMAKE_COMMAND) -P "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/CMakeFiles/VerifyGlobs.cmake"
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named ThreeDSynth
+# Target rules for targets named ThreeDOne
 
 # Build rule for target.
-ThreeDSynth: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ThreeDSynth
-.PHONY : ThreeDSynth
+ThreeDOne: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ThreeDOne
+.PHONY : ThreeDOne
 
 # fast build rule for target.
-ThreeDSynth/fast:
-	$(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth.dir/build.make plugin/CMakeFiles/ThreeDSynth.dir/build
-.PHONY : ThreeDSynth/fast
+ThreeDOne/fast:
+	$(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne.dir/build.make plugin/CMakeFiles/ThreeDOne.dir/build
+.PHONY : ThreeDOne/fast
 
 #=============================================================================
-# Target rules for targets named ThreeDSynth_All
+# Target rules for targets named ThreeDOne_All
 
 # Build rule for target.
-ThreeDSynth_All: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ThreeDSynth_All
-.PHONY : ThreeDSynth_All
+ThreeDOne_All: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ThreeDOne_All
+.PHONY : ThreeDOne_All
 
 # fast build rule for target.
-ThreeDSynth_All/fast:
-	$(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_All.dir/build.make plugin/CMakeFiles/ThreeDSynth_All.dir/build
-.PHONY : ThreeDSynth_All/fast
+ThreeDOne_All/fast:
+	$(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_All.dir/build.make plugin/CMakeFiles/ThreeDOne_All.dir/build
+.PHONY : ThreeDOne_All/fast
 
 #=============================================================================
-# Target rules for targets named ThreeDSynth_Standalone
+# Target rules for targets named ThreeDOne_Standalone
 
 # Build rule for target.
-ThreeDSynth_Standalone: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ThreeDSynth_Standalone
-.PHONY : ThreeDSynth_Standalone
+ThreeDOne_Standalone: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ThreeDOne_Standalone
+.PHONY : ThreeDOne_Standalone
 
 # fast build rule for target.
-ThreeDSynth_Standalone/fast:
-	$(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build.make plugin/CMakeFiles/ThreeDSynth_Standalone.dir/build
-.PHONY : ThreeDSynth_Standalone/fast
+ThreeDOne_Standalone/fast:
+	$(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_Standalone.dir/build.make plugin/CMakeFiles/ThreeDOne_Standalone.dir/build
+.PHONY : ThreeDOne_Standalone/fast
 
 #=============================================================================
-# Target rules for targets named ThreeDSynth_AU
+# Target rules for targets named ThreeDOne_AU
 
 # Build rule for target.
-ThreeDSynth_AU: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ThreeDSynth_AU
-.PHONY : ThreeDSynth_AU
+ThreeDOne_AU: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ThreeDOne_AU
+.PHONY : ThreeDOne_AU
 
 # fast build rule for target.
-ThreeDSynth_AU/fast:
-	$(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_AU.dir/build.make plugin/CMakeFiles/ThreeDSynth_AU.dir/build
-.PHONY : ThreeDSynth_AU/fast
+ThreeDOne_AU/fast:
+	$(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_AU.dir/build.make plugin/CMakeFiles/ThreeDOne_AU.dir/build
+.PHONY : ThreeDOne_AU/fast
 
 #=============================================================================
-# Target rules for targets named ThreeDSynth_VST3
+# Target rules for targets named ThreeDOne_VST3
 
 # Build rule for target.
-ThreeDSynth_VST3: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ThreeDSynth_VST3
-.PHONY : ThreeDSynth_VST3
+ThreeDOne_VST3: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ThreeDOne_VST3
+.PHONY : ThreeDOne_VST3
 
 # fast build rule for target.
-ThreeDSynth_VST3/fast:
-	$(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDSynth_VST3.dir/build.make plugin/CMakeFiles/ThreeDSynth_VST3.dir/build
-.PHONY : ThreeDSynth_VST3/fast
+ThreeDOne_VST3/fast:
+	$(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/ThreeDOne_VST3.dir/build.make plugin/CMakeFiles/ThreeDOne_VST3.dir/build
+.PHONY : ThreeDOne_VST3/fast
 
 #=============================================================================
 # Target rules for targets named juce_vst3_helper
@@ -252,11 +252,11 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... ThreeDSynth_All"
-	@echo "... ThreeDSynth"
-	@echo "... ThreeDSynth_AU"
-	@echo "... ThreeDSynth_Standalone"
-	@echo "... ThreeDSynth_VST3"
+	@echo "... ThreeDOne_All"
+	@echo "... ThreeDOne"
+	@echo "... ThreeDOne_AU"
+	@echo "... ThreeDOne_Standalone"
+	@echo "... ThreeDOne_VST3"
 	@echo "... juce_vst3_helper"
 .PHONY : help
 
@@ -269,7 +269,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -P "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/CMakeFiles/VerifyGlobs.cmake"
+	$(CMAKE_COMMAND) -P "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/CMakeFiles/VerifyGlobs.cmake"
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

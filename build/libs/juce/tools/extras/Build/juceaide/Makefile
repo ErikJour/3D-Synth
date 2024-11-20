@@ -48,19 +48,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/homebrew/Cellar/cmake/3.30.0/bin/cmake
+CMAKE_COMMAND = /usr/local/Cellar/cmake/3.30.5/bin/cmake
 
 # The command to remove a file.
-RM = /opt/homebrew/Cellar/cmake/3.30.0/bin/cmake -E rm -f
+RM = /usr/local/Cellar/cmake/3.30.5/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/libs/juce"
+CMAKE_SOURCE_DIR = "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/libs/juce"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools"
+CMAKE_BINARY_DIR = "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
-	/opt/homebrew/Cellar/cmake/3.30.0/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/local/Cellar/cmake/3.30.5/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -78,7 +78,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake to regenerate build system..."
-	/opt/homebrew/Cellar/cmake/3.30.0/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/local/Cellar/cmake/3.30.5/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -97,49 +97,49 @@ list_install_components/fast: list_install_components
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/opt/homebrew/Cellar/cmake/3.30.0/bin/cmake -P cmake_install.cmake
+	/usr/local/Cellar/cmake/3.30.5/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/opt/homebrew/Cellar/cmake/3.30.0/bin/cmake -P cmake_install.cmake
+	/usr/local/Cellar/cmake/3.30.5/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/opt/homebrew/Cellar/cmake/3.30.0/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/usr/local/Cellar/cmake/3.30.5/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/opt/homebrew/Cellar/cmake/3.30.0/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/usr/local/Cellar/cmake/3.30.5/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/opt/homebrew/Cellar/cmake/3.30.0/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/usr/local/Cellar/cmake/3.30.5/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/opt/homebrew/Cellar/cmake/3.30.0/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/usr/local/Cellar/cmake/3.30.5/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(CMAKE_COMMAND) -E cmake_progress_start "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools/CMakeFiles" "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools/extras/Build/juceaide//CMakeFiles/progress.marks"
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 extras/Build/juceaide/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools/CMakeFiles" 0
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(CMAKE_COMMAND) -E cmake_progress_start "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools/CMakeFiles" "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools/extras/Build/juceaide//CMakeFiles/progress.marks"
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 extras/Build/juceaide/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 extras/Build/juceaide/clean
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 extras/Build/juceaide/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,23 +148,23 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 extras/Build/juceaide/preinstall
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 extras/Build/juceaide/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 extras/Build/juceaide/preinstall
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 extras/Build/juceaide/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(CMAKE_COMMAND) -P "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools/CMakeFiles/VerifyGlobs.cmake"
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(CMAKE_COMMAND) -P "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools/CMakeFiles/VerifyGlobs.cmake"
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 extras/Build/juceaide/CMakeFiles/juceaide.dir/rule:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 extras/Build/juceaide/CMakeFiles/juceaide.dir/rule
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 extras/Build/juceaide/CMakeFiles/juceaide.dir/rule
 .PHONY : extras/Build/juceaide/CMakeFiles/juceaide.dir/rule
 
 # Convenience name for target.
@@ -173,7 +173,7 @@ juceaide: extras/Build/juceaide/CMakeFiles/juceaide.dir/rule
 
 # fast build rule for target.
 juceaide/fast:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/build
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/build
 .PHONY : juceaide/fast
 
 Main.o: Main.cpp.o
@@ -181,7 +181,7 @@ Main.o: Main.cpp.o
 
 # target to build an object file
 Main.cpp.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/Main.cpp.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/Main.cpp.o
 .PHONY : Main.cpp.o
 
 Main.i: Main.cpp.i
@@ -189,7 +189,7 @@ Main.i: Main.cpp.i
 
 # target to preprocess a source file
 Main.cpp.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/Main.cpp.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/Main.cpp.i
 .PHONY : Main.cpp.i
 
 Main.s: Main.cpp.s
@@ -197,7 +197,7 @@ Main.s: Main.cpp.s
 
 # target to generate assembly for a file
 Main.cpp.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/Main.cpp.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/Main.cpp.s
 .PHONY : Main.cpp.s
 
 __/__/__/modules/juce_core/juce_core.o: __/__/__/modules/juce_core/juce_core.mm.o
@@ -205,7 +205,7 @@ __/__/__/modules/juce_core/juce_core.o: __/__/__/modules/juce_core/juce_core.mm.
 
 # target to build an object file
 __/__/__/modules/juce_core/juce_core.mm.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_core/juce_core.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_core/juce_core.mm.o
 .PHONY : __/__/__/modules/juce_core/juce_core.mm.o
 
 __/__/__/modules/juce_core/juce_core.i: __/__/__/modules/juce_core/juce_core.mm.i
@@ -213,7 +213,7 @@ __/__/__/modules/juce_core/juce_core.i: __/__/__/modules/juce_core/juce_core.mm.
 
 # target to preprocess a source file
 __/__/__/modules/juce_core/juce_core.mm.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_core/juce_core.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_core/juce_core.mm.i
 .PHONY : __/__/__/modules/juce_core/juce_core.mm.i
 
 __/__/__/modules/juce_core/juce_core.s: __/__/__/modules/juce_core/juce_core.mm.s
@@ -221,7 +221,7 @@ __/__/__/modules/juce_core/juce_core.s: __/__/__/modules/juce_core/juce_core.mm.
 
 # target to generate assembly for a file
 __/__/__/modules/juce_core/juce_core.mm.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_core/juce_core.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_core/juce_core.mm.s
 .PHONY : __/__/__/modules/juce_core/juce_core.mm.s
 
 __/__/__/modules/juce_core/juce_core_CompilationTime.o: __/__/__/modules/juce_core/juce_core_CompilationTime.cpp.o
@@ -229,7 +229,7 @@ __/__/__/modules/juce_core/juce_core_CompilationTime.o: __/__/__/modules/juce_co
 
 # target to build an object file
 __/__/__/modules/juce_core/juce_core_CompilationTime.cpp.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_core/juce_core_CompilationTime.cpp.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_core/juce_core_CompilationTime.cpp.o
 .PHONY : __/__/__/modules/juce_core/juce_core_CompilationTime.cpp.o
 
 __/__/__/modules/juce_core/juce_core_CompilationTime.i: __/__/__/modules/juce_core/juce_core_CompilationTime.cpp.i
@@ -237,7 +237,7 @@ __/__/__/modules/juce_core/juce_core_CompilationTime.i: __/__/__/modules/juce_co
 
 # target to preprocess a source file
 __/__/__/modules/juce_core/juce_core_CompilationTime.cpp.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_core/juce_core_CompilationTime.cpp.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_core/juce_core_CompilationTime.cpp.i
 .PHONY : __/__/__/modules/juce_core/juce_core_CompilationTime.cpp.i
 
 __/__/__/modules/juce_core/juce_core_CompilationTime.s: __/__/__/modules/juce_core/juce_core_CompilationTime.cpp.s
@@ -245,7 +245,7 @@ __/__/__/modules/juce_core/juce_core_CompilationTime.s: __/__/__/modules/juce_co
 
 # target to generate assembly for a file
 __/__/__/modules/juce_core/juce_core_CompilationTime.cpp.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_core/juce_core_CompilationTime.cpp.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_core/juce_core_CompilationTime.cpp.s
 .PHONY : __/__/__/modules/juce_core/juce_core_CompilationTime.cpp.s
 
 __/__/__/modules/juce_data_structures/juce_data_structures.o: __/__/__/modules/juce_data_structures/juce_data_structures.mm.o
@@ -253,7 +253,7 @@ __/__/__/modules/juce_data_structures/juce_data_structures.o: __/__/__/modules/j
 
 # target to build an object file
 __/__/__/modules/juce_data_structures/juce_data_structures.mm.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_data_structures/juce_data_structures.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_data_structures/juce_data_structures.mm.o
 .PHONY : __/__/__/modules/juce_data_structures/juce_data_structures.mm.o
 
 __/__/__/modules/juce_data_structures/juce_data_structures.i: __/__/__/modules/juce_data_structures/juce_data_structures.mm.i
@@ -261,7 +261,7 @@ __/__/__/modules/juce_data_structures/juce_data_structures.i: __/__/__/modules/j
 
 # target to preprocess a source file
 __/__/__/modules/juce_data_structures/juce_data_structures.mm.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_data_structures/juce_data_structures.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_data_structures/juce_data_structures.mm.i
 .PHONY : __/__/__/modules/juce_data_structures/juce_data_structures.mm.i
 
 __/__/__/modules/juce_data_structures/juce_data_structures.s: __/__/__/modules/juce_data_structures/juce_data_structures.mm.s
@@ -269,7 +269,7 @@ __/__/__/modules/juce_data_structures/juce_data_structures.s: __/__/__/modules/j
 
 # target to generate assembly for a file
 __/__/__/modules/juce_data_structures/juce_data_structures.mm.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_data_structures/juce_data_structures.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_data_structures/juce_data_structures.mm.s
 .PHONY : __/__/__/modules/juce_data_structures/juce_data_structures.mm.s
 
 __/__/__/modules/juce_events/juce_events.o: __/__/__/modules/juce_events/juce_events.mm.o
@@ -277,7 +277,7 @@ __/__/__/modules/juce_events/juce_events.o: __/__/__/modules/juce_events/juce_ev
 
 # target to build an object file
 __/__/__/modules/juce_events/juce_events.mm.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_events/juce_events.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_events/juce_events.mm.o
 .PHONY : __/__/__/modules/juce_events/juce_events.mm.o
 
 __/__/__/modules/juce_events/juce_events.i: __/__/__/modules/juce_events/juce_events.mm.i
@@ -285,7 +285,7 @@ __/__/__/modules/juce_events/juce_events.i: __/__/__/modules/juce_events/juce_ev
 
 # target to preprocess a source file
 __/__/__/modules/juce_events/juce_events.mm.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_events/juce_events.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_events/juce_events.mm.i
 .PHONY : __/__/__/modules/juce_events/juce_events.mm.i
 
 __/__/__/modules/juce_events/juce_events.s: __/__/__/modules/juce_events/juce_events.mm.s
@@ -293,7 +293,7 @@ __/__/__/modules/juce_events/juce_events.s: __/__/__/modules/juce_events/juce_ev
 
 # target to generate assembly for a file
 __/__/__/modules/juce_events/juce_events.mm.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_events/juce_events.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_events/juce_events.mm.s
 .PHONY : __/__/__/modules/juce_events/juce_events.mm.s
 
 __/__/__/modules/juce_graphics/juce_graphics.o: __/__/__/modules/juce_graphics/juce_graphics.mm.o
@@ -301,7 +301,7 @@ __/__/__/modules/juce_graphics/juce_graphics.o: __/__/__/modules/juce_graphics/j
 
 # target to build an object file
 __/__/__/modules/juce_graphics/juce_graphics.mm.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_graphics/juce_graphics.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_graphics/juce_graphics.mm.o
 .PHONY : __/__/__/modules/juce_graphics/juce_graphics.mm.o
 
 __/__/__/modules/juce_graphics/juce_graphics.i: __/__/__/modules/juce_graphics/juce_graphics.mm.i
@@ -309,7 +309,7 @@ __/__/__/modules/juce_graphics/juce_graphics.i: __/__/__/modules/juce_graphics/j
 
 # target to preprocess a source file
 __/__/__/modules/juce_graphics/juce_graphics.mm.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_graphics/juce_graphics.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_graphics/juce_graphics.mm.i
 .PHONY : __/__/__/modules/juce_graphics/juce_graphics.mm.i
 
 __/__/__/modules/juce_graphics/juce_graphics.s: __/__/__/modules/juce_graphics/juce_graphics.mm.s
@@ -317,7 +317,7 @@ __/__/__/modules/juce_graphics/juce_graphics.s: __/__/__/modules/juce_graphics/j
 
 # target to generate assembly for a file
 __/__/__/modules/juce_graphics/juce_graphics.mm.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_graphics/juce_graphics.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_graphics/juce_graphics.mm.s
 .PHONY : __/__/__/modules/juce_graphics/juce_graphics.mm.s
 
 __/__/__/modules/juce_graphics/juce_graphics_Harfbuzz.o: __/__/__/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.o
@@ -325,7 +325,7 @@ __/__/__/modules/juce_graphics/juce_graphics_Harfbuzz.o: __/__/__/modules/juce_g
 
 # target to build an object file
 __/__/__/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.o
 .PHONY : __/__/__/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.o
 
 __/__/__/modules/juce_graphics/juce_graphics_Harfbuzz.i: __/__/__/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.i
@@ -333,7 +333,7 @@ __/__/__/modules/juce_graphics/juce_graphics_Harfbuzz.i: __/__/__/modules/juce_g
 
 # target to preprocess a source file
 __/__/__/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.i
 .PHONY : __/__/__/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.i
 
 __/__/__/modules/juce_graphics/juce_graphics_Harfbuzz.s: __/__/__/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.s
@@ -341,15 +341,39 @@ __/__/__/modules/juce_graphics/juce_graphics_Harfbuzz.s: __/__/__/modules/juce_g
 
 # target to generate assembly for a file
 __/__/__/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.s
 .PHONY : __/__/__/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.s
+
+__/__/__/modules/juce_graphics/juce_graphics_Sheenbidi.o: __/__/__/modules/juce_graphics/juce_graphics_Sheenbidi.c.o
+.PHONY : __/__/__/modules/juce_graphics/juce_graphics_Sheenbidi.o
+
+# target to build an object file
+__/__/__/modules/juce_graphics/juce_graphics_Sheenbidi.c.o:
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_graphics/juce_graphics_Sheenbidi.c.o
+.PHONY : __/__/__/modules/juce_graphics/juce_graphics_Sheenbidi.c.o
+
+__/__/__/modules/juce_graphics/juce_graphics_Sheenbidi.i: __/__/__/modules/juce_graphics/juce_graphics_Sheenbidi.c.i
+.PHONY : __/__/__/modules/juce_graphics/juce_graphics_Sheenbidi.i
+
+# target to preprocess a source file
+__/__/__/modules/juce_graphics/juce_graphics_Sheenbidi.c.i:
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_graphics/juce_graphics_Sheenbidi.c.i
+.PHONY : __/__/__/modules/juce_graphics/juce_graphics_Sheenbidi.c.i
+
+__/__/__/modules/juce_graphics/juce_graphics_Sheenbidi.s: __/__/__/modules/juce_graphics/juce_graphics_Sheenbidi.c.s
+.PHONY : __/__/__/modules/juce_graphics/juce_graphics_Sheenbidi.s
+
+# target to generate assembly for a file
+__/__/__/modules/juce_graphics/juce_graphics_Sheenbidi.c.s:
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_graphics/juce_graphics_Sheenbidi.c.s
+.PHONY : __/__/__/modules/juce_graphics/juce_graphics_Sheenbidi.c.s
 
 __/__/__/modules/juce_gui_basics/juce_gui_basics.o: __/__/__/modules/juce_gui_basics/juce_gui_basics.mm.o
 .PHONY : __/__/__/modules/juce_gui_basics/juce_gui_basics.o
 
 # target to build an object file
 __/__/__/modules/juce_gui_basics/juce_gui_basics.mm.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_gui_basics/juce_gui_basics.mm.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_gui_basics/juce_gui_basics.mm.o
 .PHONY : __/__/__/modules/juce_gui_basics/juce_gui_basics.mm.o
 
 __/__/__/modules/juce_gui_basics/juce_gui_basics.i: __/__/__/modules/juce_gui_basics/juce_gui_basics.mm.i
@@ -357,7 +381,7 @@ __/__/__/modules/juce_gui_basics/juce_gui_basics.i: __/__/__/modules/juce_gui_ba
 
 # target to preprocess a source file
 __/__/__/modules/juce_gui_basics/juce_gui_basics.mm.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_gui_basics/juce_gui_basics.mm.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_gui_basics/juce_gui_basics.mm.i
 .PHONY : __/__/__/modules/juce_gui_basics/juce_gui_basics.mm.i
 
 __/__/__/modules/juce_gui_basics/juce_gui_basics.s: __/__/__/modules/juce_gui_basics/juce_gui_basics.mm.s
@@ -365,7 +389,7 @@ __/__/__/modules/juce_gui_basics/juce_gui_basics.s: __/__/__/modules/juce_gui_ba
 
 # target to generate assembly for a file
 __/__/__/modules/juce_gui_basics/juce_gui_basics.mm.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_gui_basics/juce_gui_basics.mm.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_gui_basics/juce_gui_basics.mm.s
 .PHONY : __/__/__/modules/juce_gui_basics/juce_gui_basics.mm.s
 
 __/juce_build_tools/juce_build_tools.o: __/juce_build_tools/juce_build_tools.cpp.o
@@ -373,7 +397,7 @@ __/juce_build_tools/juce_build_tools.o: __/juce_build_tools/juce_build_tools.cpp
 
 # target to build an object file
 __/juce_build_tools/juce_build_tools.cpp.o:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/juce_build_tools/juce_build_tools.cpp.o
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/juce_build_tools/juce_build_tools.cpp.o
 .PHONY : __/juce_build_tools/juce_build_tools.cpp.o
 
 __/juce_build_tools/juce_build_tools.i: __/juce_build_tools/juce_build_tools.cpp.i
@@ -381,7 +405,7 @@ __/juce_build_tools/juce_build_tools.i: __/juce_build_tools/juce_build_tools.cpp
 
 # target to preprocess a source file
 __/juce_build_tools/juce_build_tools.cpp.i:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/juce_build_tools/juce_build_tools.cpp.i
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/juce_build_tools/juce_build_tools.cpp.i
 .PHONY : __/juce_build_tools/juce_build_tools.cpp.i
 
 __/juce_build_tools/juce_build_tools.s: __/juce_build_tools/juce_build_tools.cpp.s
@@ -389,7 +413,7 @@ __/juce_build_tools/juce_build_tools.s: __/juce_build_tools/juce_build_tools.cpp
 
 # target to generate assembly for a file
 __/juce_build_tools/juce_build_tools.cpp.s:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/juce_build_tools/juce_build_tools.cpp.s
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(MAKE) $(MAKESILENT) -f extras/Build/juceaide/CMakeFiles/juceaide.dir/build.make extras/Build/juceaide/CMakeFiles/juceaide.dir/__/juce_build_tools/juce_build_tools.cpp.s
 .PHONY : __/juce_build_tools/juce_build_tools.cpp.s
 
 # Help Target
@@ -426,6 +450,9 @@ help:
 	@echo "... __/__/__/modules/juce_graphics/juce_graphics_Harfbuzz.o"
 	@echo "... __/__/__/modules/juce_graphics/juce_graphics_Harfbuzz.i"
 	@echo "... __/__/__/modules/juce_graphics/juce_graphics_Harfbuzz.s"
+	@echo "... __/__/__/modules/juce_graphics/juce_graphics_Sheenbidi.o"
+	@echo "... __/__/__/modules/juce_graphics/juce_graphics_Sheenbidi.i"
+	@echo "... __/__/__/modules/juce_graphics/juce_graphics_Sheenbidi.s"
 	@echo "... __/__/__/modules/juce_gui_basics/juce_gui_basics.o"
 	@echo "... __/__/__/modules/juce_gui_basics/juce_gui_basics.i"
 	@echo "... __/__/__/modules/juce_gui_basics/juce_gui_basics.s"
@@ -443,7 +470,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(CMAKE_COMMAND) -P "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools/CMakeFiles/VerifyGlobs.cmake"
-	cd "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/tools" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(CMAKE_COMMAND) -P "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools/CMakeFiles/VerifyGlobs.cmake"
+	cd "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/tools" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

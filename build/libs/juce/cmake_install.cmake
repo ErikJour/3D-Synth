@@ -1,4 +1,4 @@
-# Install script for directory: /Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/libs/juce
+# Install script for directory: /Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/libs/juce
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,39 +34,39 @@ endif()
 
 # Set path to fallback-tool for dependency-resolution.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/objdump")
+  set(CMAKE_OBJDUMP "/Library/Developer/CommandLineTools/usr/bin/objdump")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/modules/cmake_install.cmake")
+  include("/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/modules/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/extras/Build/cmake_install.cmake")
+  include("/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/extras/Build/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/JUCE-8.0.1" TYPE FILE FILES
-    "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/JUCEConfigVersion.cmake"
-    "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/build/libs/juce/JUCEConfig.cmake"
-    "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/libs/juce/extras/Build/CMake/JUCECheckAtomic.cmake"
-    "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/libs/juce/extras/Build/CMake/JUCEHelperTargets.cmake"
-    "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/libs/juce/extras/Build/CMake/JUCEModuleSupport.cmake"
-    "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/libs/juce/extras/Build/CMake/JUCEUtils.cmake"
-    "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/libs/juce/extras/Build/CMake/JuceLV2Defines.h.in"
-    "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/libs/juce/extras/Build/CMake/LaunchScreen.storyboard"
-    "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/libs/juce/extras/Build/CMake/PIPAudioProcessor.cpp.in"
-    "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/libs/juce/extras/Build/CMake/PIPAudioProcessorWithARA.cpp.in"
-    "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/libs/juce/extras/Build/CMake/PIPComponent.cpp.in"
-    "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/libs/juce/extras/Build/CMake/PIPConsole.cpp.in"
-    "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/libs/juce/extras/Build/CMake/RecentFilesMenuTemplate.nib"
-    "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/libs/juce/extras/Build/CMake/UnityPluginGUIScript.cs.in"
-    "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/libs/juce/extras/Build/CMake/checkBundleSigning.cmake"
-    "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/libs/juce/extras/Build/CMake/copyDir.cmake"
-    "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/libs/juce/extras/Build/CMake/juce_runtime_arch_detection.cpp"
-    "/Users/ejourgensen/Desktop/Erik/Programming/Audio Dev/Three_D_Synth/libs/juce/extras/Build/CMake/juce_LinuxSubprocessHelper.cpp"
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/JUCE-8.0.2" TYPE FILE FILES
+    "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/JUCEConfigVersion.cmake"
+    "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/build/libs/juce/JUCEConfig.cmake"
+    "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/libs/juce/extras/Build/CMake/JUCECheckAtomic.cmake"
+    "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/libs/juce/extras/Build/CMake/JUCEHelperTargets.cmake"
+    "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/libs/juce/extras/Build/CMake/JUCEModuleSupport.cmake"
+    "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/libs/juce/extras/Build/CMake/JUCEUtils.cmake"
+    "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/libs/juce/extras/Build/CMake/JuceLV2Defines.h.in"
+    "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/libs/juce/extras/Build/CMake/LaunchScreen.storyboard"
+    "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/libs/juce/extras/Build/CMake/PIPAudioProcessor.cpp.in"
+    "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/libs/juce/extras/Build/CMake/PIPAudioProcessorWithARA.cpp.in"
+    "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/libs/juce/extras/Build/CMake/PIPComponent.cpp.in"
+    "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/libs/juce/extras/Build/CMake/PIPConsole.cpp.in"
+    "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/libs/juce/extras/Build/CMake/RecentFilesMenuTemplate.nib"
+    "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/libs/juce/extras/Build/CMake/UnityPluginGUIScript.cs.in"
+    "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/libs/juce/extras/Build/CMake/checkBundleSigning.cmake"
+    "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/libs/juce/extras/Build/CMake/copyDir.cmake"
+    "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/libs/juce/extras/Build/CMake/juce_runtime_arch_detection.cpp"
+    "/Users/erikjourgensen/Desktop/Dev/Weekly Projects/Week 6 - The 3D Synth Part 1/ThreeDPartOne/libs/juce/extras/Build/CMake/juce_LinuxSubprocessHelper.cpp"
     )
 endif()
 
