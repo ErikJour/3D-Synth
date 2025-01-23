@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "three-csg-ts": "^3.2.0",
+    "three-mesh-bvh": "^0.8.3"
+  }
+}
